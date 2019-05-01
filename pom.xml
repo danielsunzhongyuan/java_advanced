@@ -8,6 +8,7 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <modules>
+        <module>module-thinkinginjava</module>
     </modules>
 
     <name>Java Advanced</name>
@@ -96,7 +97,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.11</version>
+                <version>4.12</version>
                 <scope>test</scope>
                 <exclusions>
                     <exclusion>
@@ -246,29 +247,11 @@
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                            <configLocation>${advanced.main.basedir}/checkstyle.xml</configLocation>
+                            <configLocation>${advanced.main.basedir}/src/checkstyle/checkstyle.xml</configLocation>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven.checkstyle.version}</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>checkstyle</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-        </plugins>
-    </reporting>
-
 </project>
