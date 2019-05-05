@@ -37,6 +37,10 @@ public class Sequence {
                 i++;
             }
         }
+
+        public Sequence outer() {
+            return Sequence.this;
+        }
     }
 
     public Selector selector() {
