@@ -8,7 +8,7 @@ public class Games {
     public static void playGame(GameFactory factory) {
         Game s = factory.getGame();
         while (s.move()) {
-            ;
+            System.out.println("move");
         }
     }
 
