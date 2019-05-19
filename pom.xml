@@ -12,6 +12,7 @@
         <module>leetcode</module>
         <module>algorithms</module>
         <module>corejava9</module>
+        <module>nowcoder</module>
     </modules>
 
     <name>Java Advanced</name>
