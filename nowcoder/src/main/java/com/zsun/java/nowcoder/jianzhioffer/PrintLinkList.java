@@ -15,20 +15,10 @@ public class PrintLinkList {
         }
         ListNode runner = listNode;
         while (null != runner) {
-            ret.add(runner.val);
+            ret.add(runner.getValue());
             runner = runner.next;
         }
         Collections.reverse(ret);
         return ret;
-    }
-}
-
-class ListNode {
-    int val;
-
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
     }
 }
