@@ -3,7 +3,6 @@ package com.zsun.java.nowcoder.jianzhioffer;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.junit.BeforeClass;
 
 /**
  * Created by zsun.
@@ -18,7 +17,6 @@ public class FindKthToTailTest extends TestCase {
     }
 
     @Override
-    @BeforeClass
     public void setUp() throws Exception {
         findKthToTail = new FindKthToTail();
         head = ListNode.initListFromArray(new int[]{1, 2, 3, 4, 5});
@@ -41,8 +39,13 @@ public class FindKthToTailTest extends TestCase {
         assertTrue("should be null", null == findKthToTail.kthFromTail(head, 0));
     }
 
-    public void testNullList() {
+    public void testTooLargeKList() {
         assertTrue("should be null", null == findKthToTail.kthFromTail(head, 6));
+    }
+
+    public void testNullList() {
+        head = null;
+        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 1));
     }
 
     public void testLastListNode() {
