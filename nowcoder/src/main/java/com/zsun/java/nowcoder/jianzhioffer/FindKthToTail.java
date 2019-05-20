@@ -11,18 +11,15 @@ public class FindKthToTail {
         }
         ListNode slow = head;
         ListNode fast = head;
-        while (fast != null && fast.next != null && k > 1) {
+        while (fast != null && k > 1) {
             fast = fast.next;
             k--;
         }
         if (fast == null) {
-            if (k == 0) {
-                return fast;
-            } else {
-                return slow;
-            }
+            return null;
         }
-        while (fast != null) {
+
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }

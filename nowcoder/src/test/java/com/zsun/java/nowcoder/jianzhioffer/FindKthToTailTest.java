@@ -33,19 +33,19 @@ public class FindKthToTailTest extends TestCase {
         return new TestSuite(FindKthToTailTest.class);
     }
 
-    public void testNullList() {
-        assertTrue("should be null", true);
-    }
-
     public void testNthListNode() {
-        assertTrue("should be first node: 1", true);
+        assertTrue("should be first node: 1", 1 == findKthToTail.kthFromTail(head, 5).getValue());
     }
 
     public void testZerothListNode() {
-        assertTrue("should be null", true);
+        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 0));
+    }
+
+    public void testNullList() {
+        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 6));
     }
 
     public void testLastListNode() {
-        assertTrue("should be 5", 5 == findKthToTail.kthFromTail(head, 5).getValue());
+        assertTrue("should be last node: 5", 5 == findKthToTail.kthFromTail(head, 1).getValue());
     }
 }
