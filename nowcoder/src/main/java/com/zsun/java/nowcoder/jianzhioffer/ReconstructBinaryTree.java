@@ -12,11 +12,9 @@ public class ReconstructBinaryTree {
     private TreeNode helper(int[] pre, int preI, int preJ, int[] in, int inI, int inJ) {
         if (preI == preJ || inI == inJ) {
             return new TreeNode(pre[preI]);
-        } else if (preI > preJ || inI > inJ) {
-            return null;
-        } else if (preJ >= pre.length || inJ >= in.length) {
-            return null;
-        } else if (preI < 0 || inI < 0) {
+        } else if (preI > preJ || inI > inJ
+            || preJ >= pre.length || inJ >= in.length
+            || preI < 0 || inI < 0) {
             return null;
         }
         TreeNode node = new TreeNode(pre[preI]);

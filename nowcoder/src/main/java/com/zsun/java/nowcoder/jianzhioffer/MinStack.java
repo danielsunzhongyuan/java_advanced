@@ -27,11 +27,17 @@ public class MinStack {
     }
 
     public void pop() {
+        if (data.empty()) {
+            return;
+        }
         data.pop();
         minData.pop();
     }
 
     public int top() {
+        if (data.empty()) {
+            return -1;
+        }
         return data.peek();
     }
 

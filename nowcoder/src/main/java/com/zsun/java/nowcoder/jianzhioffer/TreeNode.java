@@ -5,12 +5,20 @@ package com.zsun.java.nowcoder.jianzhioffer;
  * DateTime: 2019/05/19 23:22
  */
 public class TreeNode {
-    int val;
+    private int value;
 
     TreeNode left;
     TreeNode right;
 
-    TreeNode(int val) {
-        this.val = val;
+    TreeNode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }
