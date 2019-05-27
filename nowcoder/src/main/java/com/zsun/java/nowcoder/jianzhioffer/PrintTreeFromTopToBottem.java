@@ -14,7 +14,7 @@ public class PrintTreeFromTopToBottem {
         TreeNode tmp = null;
         while (!queue.isEmpty()) {
             tmp = queue.pop();
-            results.add(tmp.val);
+            results.add(tmp.getValue());
             if (tmp.left != null) {
                 queue.add(tmp.left);
             }
