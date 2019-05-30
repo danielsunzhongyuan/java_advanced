@@ -4,12 +4,13 @@ package com.zsun.java.algorithms.sort;
  * Created by zsun.
  * DateTime: 2019/05/23 00:32
  */
-public class InsertSort {
+public class InsertSort implements Sort {
+    @Override
     public void sort(int[] array) {
-        int length = array.length;
-        if (length <= 1) {
+        if (array == null || array.length <= 1) {
             return;
         }
+        int length = array.length;
         int tmp;
         for (int i = 1; i < length; i++) {
             tmp = array[i];
