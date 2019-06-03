@@ -3,6 +3,12 @@ package com.zsun.java.algorithms.sort;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
+/**
+ * Created by zsun.
+ * DateTime: 2019/05/23 00:37
+ *
+ * @author zsun
+ */
 public class SelectSortTest extends SortTest {
     private SelectSort sorter = new SelectSort();
 

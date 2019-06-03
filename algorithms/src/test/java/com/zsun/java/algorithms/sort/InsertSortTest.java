@@ -6,6 +6,8 @@ import junit.framework.TestSuite;
 /**
  * Created by zsun.
  * DateTime: 2019/05/23 00:37
+ *
+ * @author zsun
  */
 public class InsertSortTest extends SortTest {
     private InsertSort sorter = new InsertSort();
