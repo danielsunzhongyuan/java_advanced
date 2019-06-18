@@ -1,7 +1,8 @@
 # Java Advanced
 
 [![Build Status](https://img.shields.io/travis/danielsunzhongyuan/java_advanced.svg)](https://travis-ci.org/danielsunzhongyuan/java_advanced)
-[![codecov](https://codecov.io/gh/danielsunzhongyuan/java_advanced/branch/master/graph/badge.svg)](https://codecov.io/gh/danielsunzhongyuan/java_advanced)
+[![Codecov](https://codecov.io/gh/danielsunzhongyuan/java_advanced/branch/master/graph/badge.svg)](https://codecov.io/gh/danielsunzhongyuan/java_advanced)
+![License](https://img.shields.io/github/license/danielsunzhongyuan/java_advanced.svg)
 
 Java sample codes with all technical skills that I can use.
 
