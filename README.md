@@ -1,6 +1,6 @@
 # Java Advanced
 
-[![Build Status](https://img.shields.io/travis/xcatliu/pagic.svg)](https://travis-ci.org/danielsunzhongyuan/java_advanced)
+[![Build Status](https://img.shields.io/travis/danielsunzhongyuan/java_advanced.svg)](https://travis-ci.org/danielsunzhongyuan/java_advanced)
 
 
 Java sample codes with all technical skills that I can use.
