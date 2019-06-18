@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class HeapSortTest extends SortTest {
-    private HeapSort sorter = new HeapSort();
+    private Sort sorter = new HeapSort();
 
     public HeapSortTest(String name) {
         super(name);

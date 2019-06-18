@@ -4,7 +4,7 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 
 public class InsertionSortDichotomySortTest extends SortTest {
-    private InsertionSortDichotomySort sorter = new InsertionSortDichotomySort();
+    private Sort sorter = new InsertionSortDichotomySort();
 
     public InsertionSortDichotomySortTest(String name) {
         super(name);

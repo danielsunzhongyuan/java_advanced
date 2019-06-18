@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class ShellSortTest extends SortTest {
-    private ShellSort sorter = new ShellSort();
+    private Sort sorter = new ShellSort();
 
     public ShellSortTest(String name) {
         super(name);

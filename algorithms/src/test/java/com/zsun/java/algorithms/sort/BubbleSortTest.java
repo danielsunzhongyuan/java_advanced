@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class BubbleSortTest extends SortTest {
-    private BubbleSort sorter = new BubbleSort();
+    private Sort sorter = new BubbleSort();
 
     public BubbleSortTest(String name) {
         super(name);

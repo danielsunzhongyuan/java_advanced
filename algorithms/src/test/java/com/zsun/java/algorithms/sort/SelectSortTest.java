@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class SelectSortTest extends SortTest {
-    private SelectSort sorter = new SelectSort();
+    private Sort sorter = new SelectSort();
 
     public SelectSortTest(String name) {
         super(name);

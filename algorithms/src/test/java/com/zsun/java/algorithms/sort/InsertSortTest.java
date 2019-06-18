@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class InsertSortTest extends SortTest {
-    private InsertSort sorter = new InsertSort();
+    private Sort sorter = new InsertSort();
 
     public InsertSortTest(String name) {
         super(name);

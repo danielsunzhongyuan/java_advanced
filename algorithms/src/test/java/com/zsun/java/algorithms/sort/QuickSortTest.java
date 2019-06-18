@@ -5,19 +5,19 @@ import junit.framework.TestSuite;
 
 /**
  * Created by zsun.
- * DateTime: 2019/06/18 19:31
+ * DateTime: 2019/06/18 20:21
  *
  * @author zsun
  */
-public class MergeSortIterationTest extends SortTest {
-    private Sort sorter = new MergeSortIteration();
+public class QuickSortTest extends SortTest {
+    private Sort sorter = new QuickSort();
 
-    public MergeSortIterationTest(String name) {
+    public QuickSortTest(String name) {
         super(name);
     }
 
     public static Test suite() {
-        return new TestSuite(MergeSortIterationTest.class);
+        return new TestSuite(QuickSortTest.class);
     }
 
     public void test() {

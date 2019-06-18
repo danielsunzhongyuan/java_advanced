@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class CocktailSortTest extends SortTest {
-    private CocktailSort sorter = new CocktailSort();
+    private Sort sorter = new CocktailSort();
 
     public CocktailSortTest(String name) {
         super(name);

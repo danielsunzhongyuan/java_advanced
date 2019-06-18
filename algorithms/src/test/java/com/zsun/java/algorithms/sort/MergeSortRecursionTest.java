@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
  * @author zsun
  */
 public class MergeSortRecursionTest extends SortTest {
-    private MergeSortRecursion sorter = new MergeSortRecursion();
+    private Sort sorter = new MergeSortRecursion();
 
     public MergeSortRecursionTest(String name) {
         super(name);
