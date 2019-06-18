@@ -1,5 +1,11 @@
 package com.zsun.java.algorithms.sort;
 
+/**
+ * Created by zsun.
+ * DateTime: 2019/06/02 20:57
+ *
+ * @author zsun
+ */
 public class InsertionSortDichotomySort implements Sort {
     @Override
     public void sort(int[] array) {
