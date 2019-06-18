@@ -1,5 +1,7 @@
 package com.zsun.java.algorithms.sort;
 
+import static com.zsun.java.utils.MathUtils.swap;
+
 /**
  * Created by zsun.
  * DateTime: 2019/05/23 00:32
@@ -24,11 +26,5 @@ public class SelectSort implements Sort {
                 swap(array, i, minIndex);
             }
         }
-    }
-
-    private void swap(int[] array, int i, int j) {
-        array[i] = array[i] ^ array[j];
-        array[j] = array[i] ^ array[j];
-        array[i] = array[i] ^ array[j];
     }
 }

@@ -13,21 +13,21 @@ public class MergeSortRecursion implements Sort {
             return;
         }
         int length = array.length;
-        SortRecursion(array, 0, length - 1);
+        sortRecursion(array, 0, length - 1);
     }
 
-    private void SortRecursion(int[] array, int left, int right) {
+    private void sortRecursion(int[] array, int left, int right) {
         if (left == right) {
             return;
         }
 
         int mid = (left + right) >> 1;
-        SortRecursion(array, left, mid);
-        SortRecursion(array, mid + 1, right);
+        sortRecursion(array, left, mid);
+        sortRecursion(array, mid + 1, right);
         merge(array, left, mid, right);
     }
 
-    public static void merge(int[] array, int left, int mid, int right) {
+    static void merge(int[] array, int left, int mid, int right) {
         int length = right - left + 1;
         int[] tmp = new int[length];
         int index = 0;
