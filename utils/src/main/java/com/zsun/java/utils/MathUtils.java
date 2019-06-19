@@ -11,7 +11,8 @@ public class MathUtils {
     }
 
     public static void swap(int[] array, int i, int j) {
-        if (i != j) {
+        int length = array.length;
+        if (length > 1 && i != j && i >= 0 && j >= 0 && i < length && j < length) {
             array[i] ^= array[j];
             array[j] ^= array[i];
             array[i] ^= array[j];
