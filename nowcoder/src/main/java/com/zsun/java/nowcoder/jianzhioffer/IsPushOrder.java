@@ -2,6 +2,12 @@ package com.zsun.java.nowcoder.jianzhioffer;
 
 import java.util.Stack;
 
+/**
+ * Created by zsun.
+ * DateTime: 2019/05/22 23:31
+ *
+ * @author zsun
+ */
 public class IsPushOrder {
     public boolean right(int[] pushA, int[] popA) {
         Stack<Integer> s = new Stack<>();
@@ -21,13 +27,11 @@ public class IsPushOrder {
                 s.pop();
                 j++;
             }
+
+            if (i == length) {
+                break;
+            }
         }
         return s.empty();
-    }
-
-    public static void main(String[] args) {
-        IsPushOrder solution = new IsPushOrder();
-        boolean result = solution.right(new int[]{1}, new int[]{1});
-        System.out.println(result);
     }
 }
