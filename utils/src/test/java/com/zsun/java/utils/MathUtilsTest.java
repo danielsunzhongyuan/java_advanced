@@ -8,8 +8,7 @@ import org.junit.Assert;
 /**
  * Unit test for simple MathUtils.
  */
-public class MathUtilsTest
-    extends TestCase {
+public class MathUtilsTest extends TestCase {
     /**
      * Create the test case
      *

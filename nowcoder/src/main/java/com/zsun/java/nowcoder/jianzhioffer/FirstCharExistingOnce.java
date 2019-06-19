@@ -6,10 +6,12 @@ import java.util.Map;
 /**
  * Created by zsun.
  * DateTime: 2019/05/22 23:31
+ *
+ * @author zsun
  */
 public class FirstCharExistingOnce {
     public int FirstNotRepeatingChar(String str) {
-        HashMap<Character, Integer> mapping = new HashMap<>();
+        HashMap<Character, Integer> mapping = new HashMap<>(str.length());
         int length = str.length();
         if (length <= 0) {
             return -1;
@@ -27,10 +29,8 @@ public class FirstCharExistingOnce {
         int curIndex;
         for (Map.Entry<Character, Integer> entry : mapping.entrySet()) {
             curIndex = entry.getValue();
-            if (curIndex >= 0) {
-                if (minIndex > curIndex || minIndex == -1) {
-                    minIndex = curIndex;
-                }
+            if (curIndex >= 0 && (minIndex > curIndex || minIndex == -1)) {
+                minIndex = curIndex;
             }
         }
         return minIndex;

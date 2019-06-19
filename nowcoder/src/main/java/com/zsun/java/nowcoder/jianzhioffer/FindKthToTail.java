@@ -3,6 +3,8 @@ package com.zsun.java.nowcoder.jianzhioffer;
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 23:16
+ *
+ * @author zsun
  */
 public class FindKthToTail {
     public ListNode kthFromTail(ListNode head, int k) {

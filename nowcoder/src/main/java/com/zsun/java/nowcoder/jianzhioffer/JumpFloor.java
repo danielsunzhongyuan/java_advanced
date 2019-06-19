@@ -3,9 +3,11 @@ package com.zsun.java.nowcoder.jianzhioffer;
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 20:30
+ *
+ * @author zsun
  */
 public class JumpFloor {
-    public int Jump(int target) {
+    public int jump(int target) {
         if (target <= 0) {
             return -1;
         }

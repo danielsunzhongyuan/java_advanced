@@ -7,6 +7,8 @@ import junit.framework.TestSuite;
 /**
  * Created by zsun.
  * DateTime: 2019/05/21 10:07
+ *
+ * @author zsun
  */
 public class NumberOfOneTest extends TestCase {
     private NumberOfOne solution = new NumberOfOne();

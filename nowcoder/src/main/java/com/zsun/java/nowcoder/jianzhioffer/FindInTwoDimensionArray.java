@@ -3,9 +3,11 @@ package com.zsun.java.nowcoder.jianzhioffer;
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 09:22
+ *
+ * @author zsun
  */
-public class FindIn2DArray {
-    public boolean Find(int target, int[][] array) {
+public class FindInTwoDimensionArray {
+    public boolean find(int target, int[][] array) {
         if (array == null) {
             return false;
         }
@@ -15,13 +17,10 @@ public class FindIn2DArray {
         }
 
         int n = array[0].length;
-        if (n < 1) {
-            return false;
-        }
-        return Helper(target, array, 0, m - 1, 0, n - 1);
+        return n >= 1 && helper(target, array, 0, m - 1, 0, n - 1);
     }
 
-    private boolean Helper(int target, int[][] array, int mi, int mj, int ni, int nj) {
+    private boolean helper(int target, int[][] array, int mi, int mj, int ni, int nj) {
         if (mi > mj || ni > nj) {
             return false;
         }
@@ -36,11 +35,11 @@ public class FindIn2DArray {
         if (array[mMid][nMid] == target) {
             return true;
         } else if (array[mMid][nMid] > target) {
-            return Helper(target, array, mi, mMid, ni, nMid);
+            return helper(target, array, mi, mMid, ni, nMid);
         } else {
-            return Helper(target, array, mMid + 1, mj, ni, nj)
-                || Helper(target, array, mi, mj, nMid + 1, nj)
-                || Helper(target, array, mMid + 1, mj, nMid + 1, nj);
+            return helper(target, array, mMid + 1, mj, ni, nj)
+                || helper(target, array, mi, mj, nMid + 1, nj)
+                || helper(target, array, mMid + 1, mj, nMid + 1, nj);
         }
     }
 }

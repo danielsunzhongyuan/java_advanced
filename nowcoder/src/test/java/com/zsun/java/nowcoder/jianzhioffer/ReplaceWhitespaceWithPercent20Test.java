@@ -9,6 +9,8 @@ import junit.framework.TestSuite;
  * DateTime: 2019/05/19 16:28
  */
 public class ReplaceWhitespaceWithPercent20Test extends TestCase {
+    private ReplaceWhitespaceWithPercent20 solution = new ReplaceWhitespaceWithPercent20();
+
     public ReplaceWhitespaceWithPercent20Test(String name) {
         super(name);
     }
@@ -19,7 +21,11 @@ public class ReplaceWhitespaceWithPercent20Test extends TestCase {
 
     public void testReplace() {
         StringBuffer str = new StringBuffer("asd sdf afs");
-        ReplaceWhitespaceWithPercent20 r = new ReplaceWhitespaceWithPercent20();
-        assertTrue("should be \"asd%20sdf%20afs\"", "asd%20sdf%20afs".equals(r.replaceSpace(str)));
+        assertTrue("should be \"asd%20sdf%20afs\"", "asd%20sdf%20afs".equals(solution.replaceSpace(str)));
+    }
+
+    public void testNull() {
+        StringBuffer str = new StringBuffer();
+        assertTrue("should be \"\"", "".equals(solution.replaceSpace(str)));
     }
 }
