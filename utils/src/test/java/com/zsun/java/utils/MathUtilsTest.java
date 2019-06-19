@@ -52,7 +52,19 @@ public class MathUtilsTest
 
     public void testInvalidIJ() {
         int[] array = new int[]{1, 2, 3, 4, 5};
+        MathUtils.swap(array, -1, -1);
+        Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
+
         MathUtils.swap(array, -1, 30);
+        Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
+
+        MathUtils.swap(array, 30, -1);
+        Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
+
+        MathUtils.swap(array, 30, 29);
+        Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
+
+        MathUtils.swap(array, 1, 30);
         Assert.assertArrayEquals(new int[]{1, 2, 3, 4, 5}, array);
     }
 }
