@@ -10,7 +10,7 @@ import java.util.Map;
  * @author zsun
  */
 public class FirstCharExistingOnce {
-    public int FirstNotRepeatingChar(String str) {
+    public int firstNotRepeatingChar(String str) {
         HashMap<Character, Integer> mapping = new HashMap<>(str.length());
         int length = str.length();
         if (length <= 0) {

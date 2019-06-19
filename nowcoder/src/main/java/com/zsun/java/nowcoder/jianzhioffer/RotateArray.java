@@ -3,6 +3,8 @@ package com.zsun.java.nowcoder.jianzhioffer;
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 19:59
+ *
+ * @author zsun
  */
 public class RotateArray {
     public int minNumberInRotateArray(int[] array) {
