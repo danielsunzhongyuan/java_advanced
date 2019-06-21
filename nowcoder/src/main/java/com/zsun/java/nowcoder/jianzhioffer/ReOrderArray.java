@@ -5,6 +5,8 @@ package com.zsun.java.nowcoder.jianzhioffer;
  * DateTime: 2019/05/19 22:01
  */
 
+import com.zsun.java.utils.MathUtils;
+
 /**
  * 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，
  * 使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，
@@ -88,9 +90,7 @@ public class ReOrderArray {
                 j--;
             }
             if (i < j) {
-                tmp = array[i];
-                array[i] = array[j];
-                array[j] = tmp;
+                MathUtils.swap(array, i, j);
             }
             i++;
             j--;

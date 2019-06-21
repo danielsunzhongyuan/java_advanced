@@ -15,7 +15,7 @@ public class RandomListNode {
         this.label = label;
     }
 
-    public RandomListNode clone(RandomListNode pHead) {
+    public static RandomListNode clone(RandomListNode pHead) {
         if (pHead == null) {
             return null;
         }
@@ -32,7 +32,10 @@ public class RandomListNode {
         // 给random赋值
         runner = pHead;
         while (runner != null) {
-            runner.next.random = runner.random.next;
+            // runner.random 如果为空，那么runner.next.random也就为空，也就不用赋值了
+            if (runner.random != null) {
+                runner.next.random = runner.random.next;
+            }
             runner = runner.next.next;
         }
 
