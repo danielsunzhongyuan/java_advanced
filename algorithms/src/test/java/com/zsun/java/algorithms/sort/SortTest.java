@@ -34,7 +34,6 @@ public class SortTest extends TestCase {
         tSorted();
         tSortedReverse();
         tRandom();
-        tRandom2();
     }
 
     private void tNull() {
@@ -89,10 +88,8 @@ public class SortTest extends TestCase {
         int[] array = new int[]{34, 13, 24, 3, 23, 23, 435, 45, 42, 233, -1, 2, -10};
         this.sorter.sort(array);
         Assert.assertArrayEquals(new int[]{-10, -1, 2, 3, 13, 23, 23, 24, 34, 42, 45, 233, 435}, array);
-    }
 
-    private void tRandom2() {
-        int[] array = new int[]{9, 2, 4, 1, 3, 2, 5, 7, 6, 9};
+        array = new int[]{9, 2, 4, 1, 3, 2, 5, 7, 6, 9};
         this.sorter.sort(array);
         Assert.assertArrayEquals(new int[]{1, 2, 2, 3, 4, 5, 6, 7, 9, 9}, array);
     }
