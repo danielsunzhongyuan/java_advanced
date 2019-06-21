@@ -273,6 +273,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!--生成 Jacoco 覆盖率报告-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -299,6 +301,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!--这个是为了集成 codecov-->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
