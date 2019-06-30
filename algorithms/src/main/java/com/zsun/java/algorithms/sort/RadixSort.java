@@ -1,12 +1,14 @@
 package com.zsun.java.algorithms.sort;
 
+import java.util.Comparator;
+
 /**
  * Created by qzou.
  * DateTime: 2019-06-22 20:25
  *
  * @author qzou
  */
-public class RadixSort implements Sort {
+public class RadixSort implements Sort<Integer> {
     private static final int DIGIT_NUMBER = 3;
     private static final int MAX = 10;
     private int[] radix = new int[DIGIT_NUMBER + 1];
@@ -19,7 +21,7 @@ public class RadixSort implements Sort {
     }
 
     @Override
-    public void sort(int[] array) {
+    public void sort(Integer[] array, Comparator<Integer> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }
@@ -30,7 +32,7 @@ public class RadixSort implements Sort {
         }
     }
 
-    private void countingSort(int[] array, int n, int d) {
+    private void countingSort(Integer[] array, int n, int d) {
         int[] counting = new int[MAX];
         for (int i = 0; i < MAX; i++) {
             counting[i] = 0;
@@ -44,7 +46,7 @@ public class RadixSort implements Sort {
             counting[i] += counting[i - 1];
         }
 
-        int[] tmp = new int[n];
+        Integer[] tmp = new Integer[n];
         int digit;
         for (int i = n - 1; i >= 0; i--) {
             digit = getDigit(array[i], d);

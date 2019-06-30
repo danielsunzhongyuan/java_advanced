@@ -1,5 +1,7 @@
 package com.zsun.java.algorithms.sort;
 
+import java.util.Comparator;
+
 import static com.zsun.java.utils.MathUtils.swap;
 
 /**
@@ -8,9 +10,9 @@ import static com.zsun.java.utils.MathUtils.swap;
  *
  * @author zsun
  */
-public class SelectSort implements Sort {
+public class SelectSort<T> implements Sort<T> {
     @Override
-    public void sort(int[] array) {
+    public void sort(T[] array, Comparator<T> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }
@@ -18,7 +20,7 @@ public class SelectSort implements Sort {
         for (int i = 0; i < length - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < length; j++) {
-                if (array[j] < array[minIndex]) {
+                if (comparator.compare(array[j], array[minIndex]) < 0) {
                     minIndex = j;
                 }
             }

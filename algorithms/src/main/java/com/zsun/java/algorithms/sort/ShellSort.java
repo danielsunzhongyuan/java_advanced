@@ -1,14 +1,16 @@
 package com.zsun.java.algorithms.sort;
 
+import java.util.Comparator;
+
 /**
  * Created by zsun.
  * DateTime: 2019/06/13 20:18
  *
  * @author zsun
  */
-public class ShellSort implements Sort {
+public class ShellSort<T> implements Sort<T> {
     @Override
-    public void sort(int[] array) {
+    public void sort(T[] array, Comparator<T> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }
@@ -20,8 +22,8 @@ public class ShellSort implements Sort {
         while (h >= 1) {
             for (int i = h; i < length; i += h) {
                 int j = i - h;
-                int cur = array[i];
-                while (j >= 0 && array[j] > cur) {
+                T cur = array[i];
+                while (j >= 0 && comparator.compare(array[j], cur) > 0) {
                     array[j + h] = array[j];
                     j = j - h;
                 }

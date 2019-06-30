@@ -1,26 +1,28 @@
 package com.zsun.java.algorithms.sort;
 
+import java.util.Comparator;
+
 /**
  * Created by zsun.
  * DateTime: 2019/06/02 20:57
  *
  * @author zsun
  */
-public class InsertionSortDichotomySort implements Sort {
+public class InsertionSortDichotomySort<T> implements Sort<T> {
     @Override
-    public void sort(int[] array) {
+    public void sort(T[] array, Comparator<T> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }
 
         int length = array.length;
         for (int i = 1; i < length; i++) {
-            int cur = array[i];
+            T cur = array[i];
             int left = 0;
             int right = i - 1;
             while (left <= right) {
                 int mid = (left + right) >> 1;
-                if (array[mid] > cur) {
+                if (comparator.compare(array[mid], cur) > 0) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;

@@ -1,11 +1,19 @@
 package com.zsun.java.algorithms.sort;
 
-public class CountingSort implements Sort {
+import java.util.Comparator;
+
+/**
+ * Created by zsun.
+ * DateTime: 2019/06/30 23:31
+ *
+ * @author zsun
+ */
+public class CountingSort implements Sort<Integer> {
     private static final int BASE = 100;
     private int[] counter = new int[BASE];
 
     @Override
-    public void sort(int[] array) {
+    public void sort(Integer[] array, Comparator<Integer> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }

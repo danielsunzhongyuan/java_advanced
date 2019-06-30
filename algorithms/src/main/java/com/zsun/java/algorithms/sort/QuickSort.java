@@ -1,5 +1,7 @@
 package com.zsun.java.algorithms.sort;
 
+import java.util.Comparator;
+
 import static com.zsun.java.utils.MathUtils.swap;
 
 /**
@@ -8,30 +10,30 @@ import static com.zsun.java.utils.MathUtils.swap;
  *
  * @author zsun
  */
-public class QuickSort implements Sort {
+public class QuickSort<T> implements Sort<T> {
     @Override
-    public void sort(int[] array) {
+    public void sort(T[] array, Comparator<T> comparator) {
         if (array == null || array.length <= 1) {
             return;
         }
         int length = array.length;
-        quickSortRecursion(array, 0, length - 1);
+        quickSortRecursion(array, 0, length - 1, comparator);
     }
 
-    private void quickSortRecursion(int[] array, int left, int right) {
+    private void quickSortRecursion(T[] array, int left, int right, Comparator<T> comparator) {
         if (left >= right) {
             return;
         }
-        int pivotIndex = partition(array, left, right);
-        quickSortRecursion(array, left, pivotIndex - 1);
-        quickSortRecursion(array, pivotIndex + 1, right);
+        int pivotIndex = partition(array, left, right, comparator);
+        quickSortRecursion(array, left, pivotIndex - 1, comparator);
+        quickSortRecursion(array, pivotIndex + 1, right, comparator);
     }
 
-    private int partition(int[] array, int left, int right) {
-        int pivot = array[right];
+    private int partition(T[] array, int left, int right, Comparator<T> comparator) {
+        T pivot = array[right];
         int tail = left - 1;
         for (int i = left; i < right; i++) {
-            if (array[i] <= pivot) {
+            if (comparator.compare(array[i], pivot) <= 0) {
                 swap(array, ++tail, i);
             }
         }
