@@ -17,6 +17,13 @@ public class SortTest extends TestCase {
         }
     };
 
+    private Comparator<String> comparatorString = new Comparator<String>() {
+        @Override
+        public int compare(String o1, String o2) {
+            return o1.compareTo(o2);
+        }
+    };
+
     public SortTest(String name) {
         super(name);
     }
@@ -43,6 +50,7 @@ public class SortTest extends TestCase {
         tSorted();
         tSortedReverse();
         tRandom();
+        tString();
     }
 
     private void tNull() {
@@ -102,5 +110,11 @@ public class SortTest extends TestCase {
         array = new Integer[]{9, 2, 4, 1, 3, 2, 5, 7, 6, 9};
         sorter.sort(array, comparator);
         Assert.assertArrayEquals(new Integer[]{1, 2, 2, 3, 4, 5, 6, 7, 9, 9}, array);
+    }
+
+    private void tString() {
+        String[] array = new String[]{"oiu", "ower", "xcv", "abcd", "abd", "dfs", "abc", "dfklsajkls"};
+        sorter.sort(array, comparatorString);
+        Assert.assertArrayEquals(new String[]{"abc", "abcd", "abd", "dfklsajkls", "dfs", "oiu", "ower", "xcv"}, array);
     }
 }
