@@ -22,9 +22,12 @@ public class FindInTwoDimensionArrayTest extends TestCase {
     public void testNull() {
         assertFalse("find nothing in an empty array", solution.find(-1, null));
         assertFalse("find nothing in an empty array", solution.find(-1, new int[][]{}));
+        assertFalse("find nothing in an empty array", solution.find2(-1, null));
+        assertFalse("find nothing in an empty array", solution.find2(-1, new int[][]{}));
         int[] x = new int[]{};
         int[][] array = new int[][]{x};
         assertFalse("find nothing in an empty array", solution.find(-1, array));
+        assertFalse("find nothing in an empty array", solution.find2(-1, array));
     }
 
     public void testEvenArray() {
@@ -36,9 +39,13 @@ public class FindInTwoDimensionArrayTest extends TestCase {
         };
         for (int i = 1; i <= 16; i++) {
             assertTrue(solution.find(i, array));
+            assertTrue(solution.find2(i, array));
         }
         assertFalse("should not find 100 in array", solution.find(100, array));
         assertFalse("should not find 0 in array", solution.find(0, array));
+
+        assertFalse("should not find 100 in array", solution.find2(100, array));
+        assertFalse("should not find 0 in array", solution.find2(0, array));
     }
 
     public void testOddArray() {
@@ -53,8 +60,12 @@ public class FindInTwoDimensionArrayTest extends TestCase {
         };
         for (int i = 1; i <= 49; i++) {
             assertTrue(solution.find(i, array));
+            assertTrue(solution.find2(i, array));
         }
         assertFalse("should not find 100 in array", solution.find(100, array));
         assertFalse("should not find 0 in array", solution.find(0, array));
+
+        assertFalse("should not find 100 in array", solution.find2(100, array));
+        assertFalse("should not find 0 in array", solution.find2(0, array));
     }
 }
