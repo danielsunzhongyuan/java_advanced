@@ -35,7 +35,9 @@ public class FindInTwoDimensionArray {
         if (array[mMid][nMid] == target) {
             return true;
         } else if (array[mMid][nMid] > target) {
-            return helper(target, array, mi, mMid, ni, nMid);
+            return helper(target, array, mMid + 1, mj, ni, nj - 1)
+                || helper(target, array, mi, mj - 1, nMid + 1, nj)
+                || helper(target, array, mi, mMid, ni, nMid);
         } else {
             return helper(target, array, mMid + 1, mj, ni, nj)
                 || helper(target, array, mi, mj, nMid + 1, nj)
