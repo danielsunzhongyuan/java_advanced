@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author zsun
  */
 public class PathInTree {
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+    public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> results = new ArrayList<>();
         ArrayList<Integer> currentPath = new ArrayList<>();
         helper(results, currentPath, root, target);

@@ -10,24 +10,26 @@ package com.zsun.java.nowcoder.jianzhioffer;
  * 求该青蛙跳上一个n级的台阶总共有多少种跳法。
  */
 public class JumpFloor2 {
-    public int Jump2(int target) {
+    public int jump2(int target) {
         if (target <= 0) {
             return -1;
         }
 
-        if (target <= 2) {
-            return target;
-        }
+        return (int) new Power().power(2, target - 1);
 
-        int[] jumps = new int[target + 1];
-        jumps[0] = 1;
-        int i;
-        int j;
-        for (i = 1; i <= target; i++) {
-            for (j = 0; j < i; j++) {
-                jumps[i] += jumps[j];
-            }
-        }
-        return jumps[target];
+//        if (target <= 2) {
+//            return target;
+//        }
+//
+//        int[] jumps = new int[target + 1];
+//        jumps[0] = 1;
+//        int i;
+//        int j;
+//        for (i = 1; i <= target; i++) {
+//            for (j = 0; j < i; j++) {
+//                jumps[i] += jumps[j];
+//            }
+//        }
+//        return jumps[target];
     }
 }
