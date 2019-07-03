@@ -3,9 +3,12 @@ package com.zsun.java.nowcoder.jianzhioffer;
 /**
  * Created by zsun.
  * DateTime: 2019/05/21 13:14
+ * 判断一个数组是不是BST的后序遍历
+ *
+ * @author zsun
  */
-public class SequenceOfBST {
-    public boolean VerifyPostOrderTraversalOfBST(int[] sequence) {
+public class SequenceOfBst {
+    public boolean verify(int[] sequence) {
         if (null == sequence) {
             return false;
         }
@@ -33,9 +36,17 @@ public class SequenceOfBST {
         }
     }
 
-    // 找到一个节点，该节点及其左边的数都比target小，右边的数都比target大
-    // 返回该节点的index
-    // 如果找不到，返回-2
+    /**
+     * 找到一个节点，该节点及其左边的数都比target小，右边的数都比target大
+     * 返回该节点的index
+     * 如果找不到，返回-2
+     *
+     * @param array     待查找的数组
+     * @param start     查找的起始位置
+     * @param end       查找的终止位置
+     * @param target    查找的目标
+     * @return          要查找的坐标
+     */
     private int findIndex(int[] array, int start, int end, int target) {
         // 首先找到最后一个比target小的index
         int result;

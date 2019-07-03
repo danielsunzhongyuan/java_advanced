@@ -7,6 +7,8 @@ import junit.framework.TestSuite;
 /**
  * Created by zsun.
  * DateTime: 2019/05/21 10:56
+ *
+ * @author zsun
  */
 public class MinStackTest extends TestCase {
     private MinStack minStack = new MinStack();
@@ -26,6 +28,16 @@ public class MinStackTest extends TestCase {
     public void testPushOne() {
         minStack.push(1);
         assertEquals(1, minStack.min());
+
+        // empty
+        minStack.pop();
+        assertEquals(-1, minStack.min());
+        assertEquals(-1, minStack.top());
+
+        // invalid pop
+        minStack.pop();
+        assertEquals(-1, minStack.min());
+        assertEquals(-1, minStack.top());
     }
 
     public void testPushTwo() {

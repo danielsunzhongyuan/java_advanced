@@ -25,6 +25,18 @@ public class PrintMatrixClockwiseTest extends TestCase {
         solution = new PrintMatrixClockwise();
     }
 
+    public void testEmpty() {
+        Assert.assertArrayEquals(new Integer[]{},
+            solution.printMatrix(null).toArray());
+
+        Assert.assertArrayEquals(new Integer[]{},
+            solution.printMatrix(new int[][]{}).toArray());
+
+        int[] x = new int[]{};
+        Assert.assertArrayEquals(new Integer[]{},
+            solution.printMatrix(new int[][]{x}).toArray());
+    }
+
     public void testNormal() {
         int[][] matrix = new int[][]{
             {1, 2, 3, 4},

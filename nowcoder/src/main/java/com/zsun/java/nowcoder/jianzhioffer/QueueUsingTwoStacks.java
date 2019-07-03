@@ -5,10 +5,12 @@ import java.util.Stack;
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 19:53
+ *
+ * @author zsun
  */
 public class QueueUsingTwoStacks {
-    Stack<Integer> stack1 = new Stack<Integer>();
-    Stack<Integer> stack2 = new Stack<Integer>();
+    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack2 = new Stack<>();
 
     public void push(int node) {
         stack1.push(node);
