@@ -43,7 +43,7 @@ public class MyCallable {
             System.err.println(e);
         }
 
-        executor.shutdown();
+        ExecutorServiceUtils.stop(executor);
     }
 
     private static void futureWithTimeout() {
@@ -72,6 +72,6 @@ public class MyCallable {
             e.printStackTrace();
         }
 
-        executor.shutdown();
+        ExecutorServiceUtils.stop(executor);
     }
 }

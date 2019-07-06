@@ -39,7 +39,7 @@ public class MyScheduledExecutors {
         long remainingDelay = future.getDelay(TimeUnit.MILLISECONDS);
         System.out.printf("Remaining Delay: %sms\n", remainingDelay);
 
-        executor.shutdown();
+        ExecutorServiceUtils.stop(executor);
     }
 
     private static void fixedRate() {
@@ -53,7 +53,8 @@ public class MyScheduledExecutors {
         int period = 1;
         executor.scheduleAtFixedRate(task, initialDelay, period, TimeUnit.SECONDS);
 
-        shutdown(executor);
+        ExecutorServiceUtils.sleep(20);
+        ExecutorServiceUtils.stop(executor);
     }
 
     private static void fixedDelay() {
@@ -64,22 +65,13 @@ public class MyScheduledExecutors {
                 TimeUnit.SECONDS.sleep(2);
                 System.out.println("Scheduling fixedDelay: " + System.currentTimeMillis() + ", nanoTime: " + System.nanoTime());
             } catch (Exception e) {
-                e.printStackTrace();
+                System.err.println(e);
             }
         };
 
         executor.scheduleWithFixedDelay(task, 0, 1, TimeUnit.SECONDS);
 
-        shutdown(executor);
-    }
-
-    private static void shutdown(ScheduledExecutorService executor) {
-        try {
-            TimeUnit.SECONDS.sleep(20);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            executor.shutdown();
-        }
+        ExecutorServiceUtils.sleep(20);
+        ExecutorServiceUtils.stop(executor);
     }
 }
