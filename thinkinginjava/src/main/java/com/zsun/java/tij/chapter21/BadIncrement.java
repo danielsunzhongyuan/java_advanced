@@ -13,8 +13,12 @@ import java.util.stream.IntStream;
 public class BadIncrement {
     private int count = 0;
 
-    private void increment() {
+    public void increment() {
         count = count + 1;
+    }
+
+    public int getCount() {
+        return count;
     }
 
     public static void main(String[] args) {
@@ -27,6 +31,6 @@ public class BadIncrement {
         ExecutorServiceUtils.stop(executor);
 
         // 期待是 10000，但是实际上比10000小，比如 9538。
-        System.out.println(badIncrement.count);
+        System.out.println(badIncrement.getCount());
     }
 }

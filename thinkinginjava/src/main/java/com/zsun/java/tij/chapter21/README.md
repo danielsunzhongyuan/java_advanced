@@ -109,6 +109,27 @@ ScheduledExecutorService可以周期性运行、或者延时一段时间的任�
 
 ## Synchronization and Locks
 上面是多线程并发运行，但是并发的时候会遇到同步的问题，比如多线程下的累加器。
+在Java中通常实现锁有两种方式，一种是synchronized关键字，另一种是Lock。
+二者其实并没有什么必然联系，但是各有各的特点，在使用中可以进行取舍的使用。
 
-### 错误的示范
-　
+实现：
+首先最大的不同：synchronized是基于JVM层面实现的，而Lock是基于JDK层面实现的。
+曾经反复的找过synchronized的实现，可惜最终无果。但Lock却是基于JDK实现的，我们可以通过阅读JDK的源码来理解Lock的实现。
+
+### 有问题的累加器
+
+### synchronized
+既可修饰方法，也可以修饰代码块。
+```java
+    synchronized (this) {
+        count = count + 1;
+    }
+```
+Java 内部使用 Monitor Lock 或者称为 Intrinsic Lock 来管理同步。
+
+### Locks
+ReentrantLock   可重入锁，这是一种排他锁。
+ReadWriteLock   读写锁 - ReentrantReadWriteLock()
+    1. 有读锁的时候，再读是可以的，写是不可以的
+    2. 有写锁的时候，在写是不可以的，读也是不可以的
+StampedLock     获取读锁、写锁的时候会返回一个印戳

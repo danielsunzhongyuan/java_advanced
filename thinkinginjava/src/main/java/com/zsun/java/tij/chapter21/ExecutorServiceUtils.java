@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class ExecutorServiceUtils {
     public static void stop(ExecutorService executor) {
         try {
-            executor.shutdownNow();
+            executor.shutdown();
             executor.awaitTermination(60, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             System.err.println("termination interrupted");
