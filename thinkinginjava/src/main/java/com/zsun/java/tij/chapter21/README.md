@@ -135,4 +135,19 @@ ReadWriteLock   读写锁 - ReentrantReadWriteLock()
 StampedLock     获取读锁、写锁的时候会返回一个印戳（*这里还不是很明白要干啥，包括tryOptimisticRead、tryConvertToWriteLock*）
 Semaphores      信号量，用来控制并发数
 
+## Atomic Variables and ConcurrentMap
+### Atomic Variables
+Atomic variables：原子变量。可替代synchronized或者locks，其内部强烈依赖了CAS（compare-and-swap）。
+因为现代的CPU本身就支持这样的原子操作，所以这些原子变量比synchronized要快。
+而synchronized内部是用lock来实现的，所以推荐使用atomic variable。
+
+包括：
+1. AtomicInteger
+2. AtomicLong
+3. AtomicBoolean
+4. AtomicReference
+
+### LongAdder
+LongAdder 可替代AtomicLong，它的add 和 increment和 AtomicLong一样是线程安全的。
+相比于AtomicLong，LongAdder适合更新比读取更多的情况，比如统计数据。缺点是占用内存多一些。
 
