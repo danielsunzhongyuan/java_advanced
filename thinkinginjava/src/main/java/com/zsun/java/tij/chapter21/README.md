@@ -132,4 +132,7 @@ ReentrantLock   可重入锁，这是一种排他锁。
 ReadWriteLock   读写锁 - ReentrantReadWriteLock()
     1. 有读锁的时候，再读是可以的，写是不可以的
     2. 有写锁的时候，在写是不可以的，读也是不可以的
-StampedLock     获取读锁、写锁的时候会返回一个印戳
+StampedLock     获取读锁、写锁的时候会返回一个印戳（*这里还不是很明白要干啥，包括tryOptimisticRead、tryConvertToWriteLock*）
+Semaphores      信号量，用来控制并发数
+
+

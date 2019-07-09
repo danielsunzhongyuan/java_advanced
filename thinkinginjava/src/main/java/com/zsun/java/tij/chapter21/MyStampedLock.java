@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.StampedLock;
 
 /**
@@ -14,11 +15,15 @@ import java.util.concurrent.locks.StampedLock;
  */
 public class MyStampedLock {
     public static void main(String[] args) {
-        simpleStampedLock();
+//        simpleStampedLock();
+//
+//        System.out.println("#######");
+//
+//        optimisticStampedLock();
+//
+//        System.out.println("#######");
 
-        System.out.println("#######");
-
-        optimisticStampedLock();
+        tryConvertToWriteLock();
     }
 
     private static void simpleStampedLock() {
@@ -82,6 +87,32 @@ public class MyStampedLock {
             } finally {
                 lock.unlock(stamp);
                 System.out.println("Write done");
+            }
+        });
+
+        ExecutorServiceUtils.stop(executor);
+    }
+
+    private static void tryConvertToWriteLock() {
+        AtomicInteger count = new AtomicInteger(0);
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        StampedLock lock = new StampedLock();
+
+        executor.submit(() -> {
+            long stamp = lock.readLock();
+            try {
+                if (count.get() == 0) {
+                    stamp = lock.tryConvertToWriteLock(stamp);
+                    if (stamp == 0L) {
+                        System.out.println("Could not convert to write lock");
+                        stamp = lock.writeLock();
+                    } else {
+                        count.set(23);
+                    }
+                }
+                System.out.println(count);
+            } finally {
+                lock.unlock(stamp);
             }
         });
 
