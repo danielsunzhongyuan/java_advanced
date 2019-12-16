@@ -17,6 +17,7 @@
         <module>effective-java</module>
         <module>jvm-insight</module>
         <module>quartz</module>
+        <module>multi-thread</module>
     </modules>
 
     <name>Java Advanced</name>
