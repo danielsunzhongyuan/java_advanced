@@ -81,7 +81,6 @@ public class ReOrderArray {
         int length = array.length;
         int i = 0;
         int j = length - 1;
-        int tmp;
         while (i < j) {
             while (i < j && isOdd(array[i])) {
                 i++;
