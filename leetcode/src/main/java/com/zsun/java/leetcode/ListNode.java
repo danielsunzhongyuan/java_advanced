@@ -45,6 +45,20 @@ public class ListNode {
         return result;
     }
 
+    public static ListNode parseFromArray(int[] array) {
+        if (array.length <= 0) {
+            return null;
+        }
+        int length = array.length;
+        ListNode sentinal = new ListNode(0);
+        for (int i = length - 1; i >= 0; i--) {
+            ListNode tmp = new ListNode(array[i]);
+            tmp.next = sentinal.next;
+            sentinal.next = tmp;
+        }
+        return sentinal.next;
+    }
+
     /**
      * 计算单链表的长度，前提条件是没有环
      *
