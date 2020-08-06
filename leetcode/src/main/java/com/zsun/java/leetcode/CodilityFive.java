@@ -12,9 +12,47 @@ import java.util.List;
 public class CodilityFive {
     /**
      * 按照 SML 来排序
-     *
+     * <p>
      * TODO： 这个没全对，性能也不行
+     * 真是 2B 了，这不就是计数排序嘛。。。
      */
+    public String Solution2(String T) {
+        if ("".equals(T)) {
+            return T;
+        }
+        int lCounter = 0;
+        int mCounter = 0;
+        int sCounter = 0;
+        int length = T.length();
+        for (int i = 0; i < length; i++) {
+            char c = T.charAt(i);
+            switch (c) {
+                case 'S':
+                    sCounter++;
+                    break;
+                case 'M':
+                    mCounter++;
+                    break;
+                case 'L':
+                    lCounter++;
+                    break;
+                default:
+                    break;
+            }
+        }
+        StringBuffer sb = new StringBuffer(lCounter + mCounter + sCounter);
+        for (int i = 0; i < sCounter; i++) {
+            sb.append('S');
+        }
+        for (int i = 0; i < mCounter; i++) {
+            sb.append('M');
+        }
+        for (int i = 0; i < lCounter; i++) {
+            sb.append('L');
+        }
+        return sb.toString();
+    }
+
     public String Solution(String T) {
         if ("".equals(T)) {
             return T;
@@ -39,11 +77,8 @@ public class CodilityFive {
 
     public static void main(String[] args) {
         CodilityFive codilityFive = new CodilityFive();
-        System.out.println(codilityFive.Solution("MSSLS"));
-        System.out.println(codilityFive.Solution("LLMS"));
-        System.out.println(codilityFive.Solution("SMS"));
-        assert "SSSML".equals(codilityFive.Solution("MSSLS"));
-        assert "SMLL".equals(codilityFive.Solution("LLMS"));
-        assert "SSM".equals(codilityFive.Solution("SMS"));
+        System.out.println(codilityFive.Solution2("MSSLS"));
+        System.out.println(codilityFive.Solution2("LLMS"));
+        System.out.println(codilityFive.Solution2("SMS"));
     }
 }
