@@ -38,16 +38,16 @@
     </properties>
 
     <repositories>
-        <repository>
-            <id>xxx-releases</id>
-            <url>http://nexus.xxx.com/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+<!--        <repository>-->
+<!--            <id>xxx-releases</id>-->
+<!--            <url>http://nexus.xxx.com/nexus/content/groups/public</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
         <repository>
             <id>HDPJetty</id>
             <name>HDP Jetty</name>
@@ -83,16 +83,16 @@
     </repositories>
 
     <distributionManagement>
-        <repository>
-            <id>xxx-releases</id>
-            <name>Xxx Releases Repository</name>
-            <url>http://nexus.xxx.com/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>xxx-snapshots</id>
-            <name>Xxx Snapshots Repository</name>
-            <url>http://nexus.xxx.com/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
+<!--        <repository>-->
+<!--            <id>xxx-releases</id>-->
+<!--            <name>Xxx Releases Repository</name>-->
+<!--            <url>http://nexus.xxx.com/nexus/content/repositories/releases/</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>xxx-snapshots</id>-->
+<!--            <name>Xxx Snapshots Repository</name>-->
+<!--            <url>http://nexus.xxx.com/nexus/content/repositories/snapshots/</url>-->
+<!--        </snapshotRepository>-->
     </distributionManagement>
 
     <!--

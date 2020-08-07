@@ -9,12 +9,12 @@ public class CodilityFour {
     /**
      * 相邻相同的字母，只保留两个
      */
-    public String Solution(String S) {
-        if ("".equals(S) || S.length() == 1) {
-            return S;
+    public String Solution(String s) {
+        if ("".equals(s) || s.length() == 1) {
+            return s;
         }
 
-        char[] chars = S.toCharArray();
+        char[] chars = s.toCharArray();
         StringBuffer sb = new StringBuffer(chars.length);
         int slow = 0;
         int fast = 1;

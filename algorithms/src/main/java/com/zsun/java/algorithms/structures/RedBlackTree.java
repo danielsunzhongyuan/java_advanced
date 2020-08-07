@@ -5,5 +5,4 @@ package com.zsun.java.algorithms.structures;
  * @date : 2019/12/03 17:53
  */
 public class RedBlackTree {
-
 }

@@ -22,20 +22,20 @@ public class ShuffleTest extends TestCase {
 
     public void testShuffle1() {
         System.out.println("从当前位置到最后选一个，然后交换");
-        int N = 7;
-        int[] a = new int[N];
-        int[][] metrix = new int[N][N];
+        final int n = 7;
+        int[] a = new int[n];
+        int[][] metrix = new int[n][n];
         for (int i = 0; i < 7000000; i++) {
-            for (int k = 0; k < N; k++) {
+            for (int k = 0; k < n; k++) {
                 a[k] = k;
             }
             shuffle1.shuffle(a);
-            for (int j = 0; j < N; j++) {
+            for (int j = 0; j < n; j++) {
                 metrix[j][a[j]]++;
             }
         }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 System.out.print(metrix[i][j] + " ");
             }
             System.out.println("");
@@ -44,21 +44,21 @@ public class ShuffleTest extends TestCase {
 
     public void testShuffle2() {
         System.out.println("从头到最后选一个，然后交换");
-        int N = 7;
-        int[] a = new int[N];
-        int[][] metrix = new int[N][N];
+        final int n = 7;
+        int[] a = new int[n];
+        int[][] matrix = new int[n][n];
         for (int i = 0; i < 7000000; i++) {
-            for (int k = 0; k < N; k++) {
+            for (int k = 0; k < n; k++) {
                 a[k] = k;
             }
             shuffle2.shuffle(a);
-            for (int j = 0; j < N; j++) {
-                metrix[j][a[j]]++;
+            for (int j = 0; j < n; j++) {
+                matrix[j][a[j]]++;
             }
         }
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.print(metrix[i][j] + " ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println("");
         }

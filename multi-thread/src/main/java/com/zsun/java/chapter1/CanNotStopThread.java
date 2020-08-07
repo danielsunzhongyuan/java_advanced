@@ -28,7 +28,6 @@ public class CanNotStopThread {
             // *** true false ***
             System.out.println("stopped? 7 = " + Thread.interrupted());
             System.out.println("stopped? 8 = " + Thread.interrupted());
-
         } catch (InterruptedException e) {
             System.out.println("main catch");
             e.printStackTrace();
