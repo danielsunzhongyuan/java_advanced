@@ -1,6 +1,9 @@
 package com.zsun.java.algorithms.shuffle;
 
+import java.io.Serializable;
+import java.util.Collections;
 import java.util.Random;
+import java.util.concurrent.AbstractExecutorService;
 
 /**
  * @author : zsun
@@ -23,5 +26,18 @@ public class SelectFromBeginning {
             arr[i] = arr[next];
             arr[next] = tmp;
         }
+    }
+
+    public static void main(String[] args) {
+
+
+        String s2 = new String("c") + new String("b");
+        System.out.println(System.identityHashCode(s2));
+        s2.intern();
+        String s3 = "cb";
+
+        System.out.println(System.identityHashCode(s2));
+        System.out.println(System.identityHashCode(s3));
+        System.out.println(s2==s3);
     }
 }

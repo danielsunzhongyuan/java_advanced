@@ -1,7 +1,6 @@
 package com.zsun.java.nowcoder.questions;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -10,7 +9,7 @@ import java.util.Stack;
  * @date : 2020/08/13 20:16
  */
 public class GetMinInStack {
-    public int[] getMinStack (int[][] op) {
+    public int[] getMinStack(int[][] op) {
         if (op.length < 1) {
             return new int[0];
         }

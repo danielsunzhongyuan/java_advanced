@@ -5,7 +5,7 @@ package com.zsun.java.nowcoder.jianzhioffer;
  * @date : 2020/08/13 21:15
  */
 public class JudgeSubTree {
-    public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+    public boolean HasSubtree(TreeNode root1, TreeNode root2) {
         if (root1 == null) {
             return false;
         }
