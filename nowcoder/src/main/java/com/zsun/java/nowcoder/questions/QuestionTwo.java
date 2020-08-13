@@ -1,62 +1,45 @@
 package com.zsun.java.nowcoder.questions;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.Stack;
 
 /**
- * Created by qzou at 2020-08-14 00:46
- * 还是超时
+ * Created by qzou at 2020-08-14 01:05
  *
  * @author qzou
  */
 public class QuestionTwo {
     public String solve(String str) {
-        // write code here
-        if ("".equals(str)) {
+        if ("".equals(str) || str.length() < 2) {
             return str;
         }
 
-        List<Character> chars = new LinkedList<>();
-        for (char c : str.toCharArray()) {
-            chars.add(c);
-        }
-
-        int preCount = chars.size();
-        change(chars);
-        while (preCount != chars.size()) {
-            System.out.println(chars);
-            preCount = chars.size();
-            change(chars);
-        }
-
-        StringBuffer sb = new StringBuffer();
-        chars.forEach(c -> {
-            sb.append(c);
-        });
-        return sb.toString();
-    }
-
-    private void change(List<Character> chars) {
-        if (chars.size() < 2) {
-            return;
-        }
-
-        for (int i = 1, length = chars.size(); i < length; i++) {
-            char pre = chars.get(i - 1);
-            char cur = chars.get(i);
-
-            if (pre == '0' && cur == '0') {
-                chars.set(i - 1, '1');
-                chars.remove(i);
-                return;
-            } else if (pre == '1' && cur == '1') {
-                chars.remove(i);
-                chars.remove(i - 1);
-                return;
+        Stack<Character> stack = new Stack<>();
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            if (stack.empty()) {
+                stack.add(c);
+            } else {
+                if (c == '1' && stack.peek() == '1') {
+                    stack.pop();
+                } else if (c == '0' && stack.peek() == '0') {
+                    stack.pop();
+                    if (!stack.empty() && stack.peek() == '1') {
+                        stack.pop();
+                    } else {
+                        stack.push('1');
+                    }
+                } else {
+                    stack.push(c);
+                }
             }
         }
-
-        return;
+        StringBuffer sb = new StringBuffer();
+        Iterator<Character> iterator = stack.iterator();
+        while (iterator.hasNext()) {
+            sb.append(iterator.next());
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
