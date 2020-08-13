@@ -41,4 +41,3 @@ public class WaitWithTime {
         t2.start();
     }
 }
-

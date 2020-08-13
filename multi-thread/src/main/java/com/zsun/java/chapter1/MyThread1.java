@@ -13,7 +13,7 @@ public class MyThread1 extends Thread {
                 System.out.println("stopped. I am quiting");
                 break;
             }
-            System.out.println("i = " + (i+1));
+            System.out.println("i = " + (i + 1));
         }
         System.out.println("after for");
     }

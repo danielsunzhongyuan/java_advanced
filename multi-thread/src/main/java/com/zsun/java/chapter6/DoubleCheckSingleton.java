@@ -27,7 +27,7 @@ class MyThread extends Thread {
 }
 
 class MyObject {
-    private volatile static MyObject myObject;
+    private static volatile MyObject myObject;
 
     private MyObject() {
     }

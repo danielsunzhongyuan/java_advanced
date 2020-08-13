@@ -19,7 +19,6 @@ public class CountDownLatchPractice {
         third.start();
         fourth.start();
 
-
         latch.await();
         System.out.println(Thread.currentThread().getName() + " has finished.");
     }

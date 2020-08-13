@@ -16,16 +16,16 @@ public class CodilityFive {
      * TODO： 这个没全对，性能也不行
      * 真是 2B 了，这不就是计数排序嘛。。。
      */
-    public String Solution2(String T) {
-        if ("".equals(T)) {
-            return T;
+    public String Solution2(String t) {
+        if ("".equals(t)) {
+            return t;
         }
         int lCounter = 0;
         int mCounter = 0;
         int sCounter = 0;
-        int length = T.length();
+        int length = t.length();
         for (int i = 0; i < length; i++) {
-            char c = T.charAt(i);
+            char c = t.charAt(i);
             switch (c) {
                 case 'S':
                     sCounter++;
@@ -53,11 +53,11 @@ public class CodilityFive {
         return sb.toString();
     }
 
-    public String Solution(String T) {
-        if ("".equals(T)) {
-            return T;
+    public String Solution(String t) {
+        if ("".equals(t)) {
+            return t;
         }
-        char[] chars = T.toCharArray();
+        char[] chars = t.toCharArray();
         StringBuffer sb = new StringBuffer();
         List<Character> list = new ArrayList<>(chars.length);
         for (char aChar : chars) {

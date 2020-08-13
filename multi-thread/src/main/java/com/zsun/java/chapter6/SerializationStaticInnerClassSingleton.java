@@ -61,6 +61,7 @@ class MyObject3 implements Serializable {
 
     /**
      * 必须要有，否则反序列化后不再是同一个实例
+     *
      * @return
      * @throws ObjectStreamException
      */

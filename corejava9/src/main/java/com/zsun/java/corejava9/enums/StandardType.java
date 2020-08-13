@@ -30,6 +30,4 @@ public enum StandardType {
     public String toString() {
         return label + "(" + value + ")";
     }
-
-
 }
