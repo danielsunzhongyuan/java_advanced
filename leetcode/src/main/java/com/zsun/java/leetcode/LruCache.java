@@ -19,7 +19,7 @@ public class LruCache {
         data = new LinkedList<>();
     }
 
-    public int get(int key) {
+    public int get(Integer key) {
         if (map.containsKey(key)) {
             data.remove(key);
             data.addFirst(key);
@@ -29,7 +29,7 @@ public class LruCache {
         }
     }
 
-    public void put(int key, int value) {
+    public void put(Integer key, Integer value) {
         if (map.containsKey(key)) {
             map.put(key, value);
             data.remove(key);
