@@ -42,7 +42,6 @@ public class LruCacheFast {
             Node node = map.get(key);
             removeNode(node);
             addFirst(node);
-            size++;
             return node.value;
         }
         return -1;
