@@ -2,8 +2,8 @@ package com.zsun.java.leetcode;
 
 public class SubarraySumK {
     public static void main(String[] args) {
-        System.out.println(new SubarraySumK().subarraySum(new int[]{1,1,1}, 2));
-        System.out.println(new SubarraySumK().subarraySum(new int[]{1,2,3}, 3));
+        System.out.println(new SubarraySumK().subarraySum(new int[]{1, 1, 1}, 2));
+        System.out.println(new SubarraySumK().subarraySum(new int[]{1, 2, 3}, 3));
     }
 
     public int subarraySum(int[] nums, int k) {

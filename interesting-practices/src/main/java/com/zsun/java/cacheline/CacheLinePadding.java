@@ -6,8 +6,8 @@ public class CacheLinePadding {
     public static final long COUNT = 10_0000_0000L;
 
     private static class T {
-//        private long p1, p2, p3, p4, p5, p6, p7;
-        public long x = 0l;
+        //        private long p1, p2, p3, p4, p5, p6, p7;
+        public long x = 0L;
 //        private long p9, p10, p11, p12, p13, p14, p15;
     }
 

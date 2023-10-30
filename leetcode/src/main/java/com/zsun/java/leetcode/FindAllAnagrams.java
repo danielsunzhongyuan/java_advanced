@@ -1,6 +1,11 @@
 package com.zsun.java.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class FindAllAnagrams {
     public static void main(String[] args) {
@@ -11,32 +16,33 @@ public class FindAllAnagrams {
     public List<Integer> findAnagrams(String s, String p) {
         Map<Character, Integer> windows = new HashMap<>();
         Map<Character, Integer> need = new HashMap<>();
-        for(int i = 0; i< p.length(); i++){
+        for (int i = 0; i < p.length(); i++) {
             char c = p.charAt(i);
             need.put(c, need.getOrDefault(c, 0) + 1);
         }
 
-        int left =0, right =0;
+        int left = 0;
+        int right = 0;
         int valit = 0;
         List<Integer> res = new ArrayList<>();
-        while(right < s.length()){
+        while (right < s.length()) {
             char c = s.charAt(right);
             right++;
-            if(need.containsKey(c)){
+            if (need.containsKey(c)) {
                 windows.put(c, windows.getOrDefault(c, 0) + 1);
-                if(need.get(c).equals(windows.get(c))){
+                if (need.get(c).equals(windows.get(c))) {
                     valit++;
                 }
             }
 
-            while(right - left >= p.length()){
-                if(valit == need.size()){
+            while (right - left >= p.length()) {
+                if (valit == need.size()) {
                     res.add(left);
                 }
                 char t = s.charAt(left);
                 left++;
-                if(need.containsKey(t)){
-                    if(need.get(t).equals(windows.get(t))){
+                if (need.containsKey(t)) {
+                    if (need.get(t).equals(windows.get(t))) {
                         valit--;
                     }
                     windows.put(t, windows.getOrDefault(t, 0) - 1);
@@ -85,7 +91,7 @@ public class FindAllAnagrams {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 26; i++) {
             if (alphabetsCount[i] > 0) {
-                sb.append((char)(i + 'a'));
+                sb.append((char) (i + 'a'));
                 sb.append(alphabetsCount[i]);
             }
         }

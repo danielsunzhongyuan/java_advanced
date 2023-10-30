@@ -13,6 +13,7 @@ public class LruCacheFast {
         int value;
         Node pre;
         Node next;
+
         public Node() {
         }
 

@@ -9,7 +9,6 @@ import java.util.HashMap;
  */
 public class CodilityTwo {
     /**
-     *
      * @param s 某一天是星期几
      * @param k 几天后
      * @return 是星期几？

@@ -30,7 +30,8 @@ public class ValidParenthese {
 
     public int longestValidParentheses(String s) {
         ArrayDeque<Pair<Character, Integer>> stack = new ArrayDeque<>();
-        int max = 0, value;
+        int max = 0;
+        int value;
         char current;
         Pair p;
 

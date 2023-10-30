@@ -10,6 +10,7 @@ public class CodilityThree {
 
     /**
      * 获取一个字符串最后一个 word 的长度
+     *
      * @param s 字母加空格的字符串
      * @return 最后一个 word 的长度
      */
