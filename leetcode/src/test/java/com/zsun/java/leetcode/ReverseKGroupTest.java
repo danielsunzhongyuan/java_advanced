@@ -1,9 +1,9 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by sunzhongyuan.
@@ -11,17 +11,10 @@ import org.junit.Assert;
  *
  * @author sunzhongyuan
  */
-public class ReverseKGroupTest extends TestCase {
+public class ReverseKGroupTest {
     private ReverseKGroup solution = new ReverseKGroup();
 
-    public ReverseKGroupTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(ReverseKGroupTest.class);
-    }
-
+    @Test
     public void testNoChange() {
         assertNull(solution.reverse(null, 10));
 
@@ -29,24 +22,25 @@ public class ReverseKGroupTest extends TestCase {
         root.next = new ListNode(2);
         root.next.next = new ListNode(3);
 
-        Assert.assertArrayEquals(new int[]{1, 2, 3},
+        Assertions.assertArrayEquals(new int[]{1, 2, 3},
             ListNode.toArray(solution.reverse(root, 1)));
-        Assert.assertArrayEquals(new int[]{1, 2, 3},
+        Assertions.assertArrayEquals(new int[]{1, 2, 3},
             ListNode.toArray(solution.reverse(root, 4)));
     }
 
+    @Test
     public void testNormal() {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);
         root.next.next = new ListNode(3);
 
-        Assert.assertArrayEquals(new int[]{2, 1, 3},
+        Assertions.assertArrayEquals(new int[]{2, 1, 3},
             ListNode.toArray(solution.reverse(root, 2)));
 
         root = new ListNode(1);
         root.next = new ListNode(2);
         root.next.next = new ListNode(3);
-        Assert.assertArrayEquals(new int[]{3, 2, 1},
+        Assertions.assertArrayEquals(new int[]{3, 2, 1},
             ListNode.toArray(solution.reverse(root, 3)));
     }
 }

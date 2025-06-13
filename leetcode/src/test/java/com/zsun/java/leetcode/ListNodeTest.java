@@ -1,8 +1,10 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by sunzhongyuan.
@@ -10,15 +12,8 @@ import junit.framework.TestSuite;
  *
  * @author sunzhongyuan
  */
-public class ListNodeTest extends TestCase {
-    public ListNodeTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(ListNodeTest.class);
-    }
-
+public class ListNodeTest {
+    @Test
     public void testCircle() {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);
@@ -32,6 +27,7 @@ public class ListNodeTest extends TestCase {
         assertFalse(ListNode.circle(new ListNode(1)));
     }
 
+    @Test
     public void testLength() {
         ListNode root = new ListNode(1);
         root.next = new ListNode(2);

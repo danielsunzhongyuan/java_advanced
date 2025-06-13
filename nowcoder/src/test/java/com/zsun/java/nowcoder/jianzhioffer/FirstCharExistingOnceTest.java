@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,23 +10,17 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class FirstCharExistingOnceTest extends TestCase {
+public class FirstCharExistingOnceTest {
     private FirstCharExistingOnce solution = new FirstCharExistingOnce();
 
-    public FirstCharExistingOnceTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(FirstCharExistingOnceTest.class);
-    }
-
+    @Test
     public void testInvalid() {
         assertEquals(-1, solution.firstNotRepeatingChar(""));
 
         assertEquals(-1, solution.firstNotRepeatingChar("abba"));
     }
 
+    @Test
     public void testNormal() {
         assertEquals(0, solution.firstNotRepeatingChar("abb"));
 

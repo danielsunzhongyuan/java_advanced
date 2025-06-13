@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,17 +10,10 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class FibonacciTest extends TestCase {
+public class FibonacciTest {
     private Fibonacci solution = new Fibonacci();
 
-    public FibonacciTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(FibonacciTest.class);
-    }
-
+    @Test
     public void testNormal() {
         assertEquals(0, solution.fibonacci(0));
         assertEquals(1, solution.fibonacci(1));
@@ -35,6 +28,7 @@ public class FibonacciTest extends TestCase {
         assertEquals(55, solution.fibonacci(10));
     }
 
+    @Test
     public void testInvalid() {
         assertEquals(-1, solution.fibonacci(-1));
         assertEquals(-1, solution.fibonacci(-10));

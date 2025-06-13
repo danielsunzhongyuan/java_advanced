@@ -1,8 +1,8 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by sunzhongyuan.
@@ -10,17 +10,10 @@ import junit.framework.TestSuite;
  *
  * @author sunzhongyuan
  */
-public class JumpGameTest extends TestCase {
+public class JumpGameTest {
     private JumpGame solution = new JumpGame();
 
-    public JumpGameTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(JumpGameTest.class);
-    }
-
+    @Test
     public void testEmpty() {
         assertEquals(0, solution.jump(null));
         assertEquals(0, solution.jump2(null));
@@ -34,6 +27,7 @@ public class JumpGameTest extends TestCase {
         assertEquals(0, solution.jump2(oneElement));
     }
 
+    @Test
     public void testNormal() {
         int[] array = new int[]{2, 3, 1, 1, 4};
         assertEquals(2, solution.jump(array));

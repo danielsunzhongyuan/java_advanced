@@ -1,34 +1,30 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by zsun.
  * DateTime: 2019/05/21 10:13
  */
-public class ReconstructBinaryTreeTest extends TestCase {
+public class ReconstructBinaryTreeTest {
     private ReconstructBinaryTree solution = new ReconstructBinaryTree();
 
-    public ReconstructBinaryTreeTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(ReconstructBinaryTreeTest.class);
-    }
-
+    @Test
     public void testOneNode() {
         TreeNode root = solution.reConstruct(new int[]{1}, new int[]{1});
         assertEquals(1, root.getValue());
     }
 
+    @Test
     public void testNullNode() {
         TreeNode root = solution.reConstruct(new int[]{}, new int[]{});
         assertNull(root);
     }
 
+    @Test
     public void testNormal() {
         int[] pre = new int[]{1, 2, 4, 7, 3, 5, 6, 8};
         int[] in = new int[]{4, 7, 2, 1, 5, 3, 8, 6};

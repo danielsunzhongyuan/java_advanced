@@ -1,25 +1,16 @@
 package com.zsun.java.algorithms.shuffle;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author : zsun
  * @date : 2020/01/14 19:06
  */
-public class ShuffleTest extends TestCase {
+public class ShuffleTest {
     private SelectFromCurrent shuffle1 = new SelectFromCurrent();
     private SelectFromBeginning shuffle2 = new SelectFromBeginning();
 
-    public ShuffleTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(ShuffleTest.class);
-    }
-
+    @Test
     public void testShuffle1() {
         System.out.println("从当前位置到最后选一个，然后交换");
         final int n = 7;
@@ -42,6 +33,7 @@ public class ShuffleTest extends TestCase {
         }
     }
 
+    @Test
     public void testShuffle2() {
         System.out.println("从头到最后选一个，然后交换");
         final int n = 7;

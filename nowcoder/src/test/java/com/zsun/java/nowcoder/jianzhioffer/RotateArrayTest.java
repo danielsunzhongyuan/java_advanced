@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,17 +10,10 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class RotateArrayTest extends TestCase {
+public class RotateArrayTest {
     private RotateArray solution = new RotateArray();
 
-    public RotateArrayTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(RotateArrayTest.class);
-    }
-
+    @Test
     public void testNormal() {
         assertEquals(1, solution.minNumberInRotateArray(new int[]{1}));
 
@@ -31,6 +24,7 @@ public class RotateArrayTest extends TestCase {
         assertEquals(1, solution.minNumberInRotateArray(new int[]{2, 3, 1}));
     }
 
+    @Test
     public void testInvalid() {
         assertEquals(0, solution.minNumberInRotateArray(new int[]{}));
     }

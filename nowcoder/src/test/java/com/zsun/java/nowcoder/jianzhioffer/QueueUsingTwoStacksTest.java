@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,17 +10,10 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class QueueUsingTwoStacksTest extends TestCase {
+public class QueueUsingTwoStacksTest {
     private QueueUsingTwoStacks solution = new QueueUsingTwoStacks();
 
-    public QueueUsingTwoStacksTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(QueueUsingTwoStacksTest.class);
-    }
-
+    @Test
     public void testNormal() {
         solution.push(1);
         solution.push(2);

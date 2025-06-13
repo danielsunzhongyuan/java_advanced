@@ -1,31 +1,25 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 16:28
  */
-public class ReplaceWhitespaceWithPercent20Test extends TestCase {
+public class ReplaceWhitespaceWithPercent20Test {
     private ReplaceWhitespaceWithPercent20 solution = new ReplaceWhitespaceWithPercent20();
 
-    public ReplaceWhitespaceWithPercent20Test(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(ReplaceWhitespaceWithPercent20Test.class);
-    }
-
+    @Test
     public void testReplace() {
         StringBuffer str = new StringBuffer("asd sdf afs");
-        assertTrue("should be \"asd%20sdf%20afs\"", "asd%20sdf%20afs".equals(solution.replaceSpace(str)));
+        assertEquals("asd%20sdf%20afs", solution.replaceSpace(str));
     }
 
+    @Test
     public void testNull() {
         StringBuffer str = new StringBuffer();
-        assertTrue("should be \"\"", "".equals(solution.replaceSpace(str)));
+        assertEquals("", solution.replaceSpace(str));
     }
 }
