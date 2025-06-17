@@ -1,8 +1,10 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by zsun.
@@ -10,27 +12,22 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class IsPushOrderTest extends TestCase {
+public class IsPushOrderTest {
     private IsPushOrder solution = new IsPushOrder();
 
-    public IsPushOrderTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(IsPushOrderTest.class);
-    }
-
+    @Test
     public void testNull() {
         assertEquals(true, solution.right(new int[]{}, new int[]{}));
     }
 
+    @Test
     public void testTrue() {
         assertTrue(solution.right(new int[]{1}, new int[]{1}));
 
         assertTrue(solution.right(new int[]{1, 2, 3}, new int[]{3, 2, 1}));
     }
 
+    @Test
     public void testFalse() {
         assertFalse(solution.right(new int[]{1}, new int[]{3}));
 

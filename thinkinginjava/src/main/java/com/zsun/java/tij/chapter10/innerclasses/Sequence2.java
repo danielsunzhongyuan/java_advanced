@@ -18,8 +18,8 @@ public class Sequence2 {
         @Override
         public String toString() {
             return "Item2{" +
-                    "s='" + s + '\'' +
-                    '}';
+                "s='" + s + '\'' +
+                '}';
         }
     }
 

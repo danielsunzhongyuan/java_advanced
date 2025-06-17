@@ -1,6 +1,7 @@
 intellij-java-google-style.xml comes from [https://github.com/google/styleguide](https://github.com/google/styleguide)
 
-Here is the [guideline](https://github.com/HPI-Information-Systems/Metanome/wiki/Installing-the-google-styleguide-settings-in-intellij-and-eclipse)
+Here is
+the [guideline](https://github.com/HPI-Information-Systems/Metanome/wiki/Installing-the-google-styleguide-settings-in-intellij-and-eclipse)
 
 TODO
 本来是想引入 checkstyle-google.xml，用于检查是否符合google的代码规格，

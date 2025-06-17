@@ -1,12 +1,15 @@
 package com.zsun.java.tij;
 
-import static junit.framework.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest {
-    public void shouldAnswerWithTrue() {
+    @Test
+    void shouldAnswerWithTrue() {
         assertTrue(true);
     }
 }

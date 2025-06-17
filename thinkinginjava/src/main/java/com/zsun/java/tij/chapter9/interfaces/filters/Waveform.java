@@ -11,7 +11,7 @@ public class Waveform {
     @Override
     public String toString() {
         return "Waveform{" +
-                "id=" + id +
-                '}';
+            "id=" + id +
+            '}';
     }
 }

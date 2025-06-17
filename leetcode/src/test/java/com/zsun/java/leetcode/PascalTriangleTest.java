@@ -1,8 +1,8 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,32 +10,28 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class PascalTriangleTest extends TestCase {
+public class PascalTriangleTest {
     private PascalTriangle solution = new PascalTriangle();
 
-    public PascalTriangleTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(PascalTriangleTest.class);
-    }
-
+    @Test
     public void testEmpty() {
         assertEquals(0, solution.generate(-1).size());
         assertEquals(0, solution.generate(0).size());
     }
 
+    @Test
     public void testOne() {
         assertEquals(1, solution.generate(1).get(0).get(0).intValue());
     }
 
+    @Test
     public void testTwo() {
         assertEquals(1, solution.generate(2).get(0).get(0).intValue());
         assertEquals(1, solution.generate(2).get(1).get(0).intValue());
         assertEquals(1, solution.generate(2).get(1).get(1).intValue());
     }
 
+    @Test
     public void testThree() {
         assertEquals(2, solution.generate(3).get(2).get(1).intValue());
     }

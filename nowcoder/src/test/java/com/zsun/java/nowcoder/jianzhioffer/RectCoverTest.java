@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by qzou.
@@ -10,31 +10,27 @@ import junit.framework.TestSuite;
  *
  * @author qzou
  */
-public class RectCoverTest extends TestCase {
+public class RectCoverTest {
     private RectCover solution = new RectCover();
 
-    public RectCoverTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(RectCoverTest.class);
-    }
-
+    @Test
     public void testMinus() {
         for (int i = -4; i < 0; i++) {
             assertEquals(-1, solution.cover(i));
         }
     }
 
+    @Test
     public void testZero() {
         assertEquals(0, solution.cover(0));
     }
 
+    @Test
     public void testOne() {
         assertEquals(1, solution.cover(1));
     }
 
+    @Test
     public void testNormal() {
         assertEquals(2, solution.cover(2));
         assertEquals(3, solution.cover(3));

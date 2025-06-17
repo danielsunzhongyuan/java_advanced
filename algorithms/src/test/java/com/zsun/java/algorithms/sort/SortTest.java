@@ -1,13 +1,13 @@
 package com.zsun.java.algorithms.sort;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
-
 import java.util.Comparator;
 
-public class SortTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class SortTest {
     private Sort sorter;
 
     private Comparator<Integer> comparator = new Comparator<Integer>() {
@@ -23,14 +23,6 @@ public class SortTest extends TestCase {
             return o1.compareTo(o2);
         }
     };
-
-    public SortTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(SortTest.class);
-    }
 
     /**
      * an empty test is necessary
@@ -68,53 +60,53 @@ public class SortTest extends TestCase {
     private void tOneElement() {
         Integer[] array = new Integer[]{1};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{1}, array);
+        assertArrayEquals(new Integer[]{1}, array);
     }
 
     private void tTwoElements() {
         Integer[] array = new Integer[]{2, 1};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{1, 2}, array);
+        assertArrayEquals(new Integer[]{1, 2}, array);
     }
 
     private void tThreeElements() {
         Integer[] array = new Integer[]{2, 1, -3};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{-3, 1, 2}, array);
+        assertArrayEquals(new Integer[]{-3, 1, 2}, array);
     }
 
     private void tFourElements() {
         Integer[] array = new Integer[]{2, 1, -3, 0, 89};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{-3, 0, 1, 2, 89}, array);
+        assertArrayEquals(new Integer[]{-3, 0, 1, 2, 89}, array);
     }
 
     private void tSorted() {
         Integer[] array = new Integer[]{1, 2, 3, 4, 5};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
+        assertArrayEquals(new Integer[]{1, 2, 3, 4, 5}, array);
     }
 
     private void tSortedReverse() {
         Integer[] array = new Integer[]{10, 9, 8, 7, 6};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{6, 7, 8, 9, 10}, array);
+        assertArrayEquals(new Integer[]{6, 7, 8, 9, 10}, array);
     }
 
     private void tRandom() {
         Integer[] array = new Integer[]{34, 13, 24, 3, 23, 23, 435, 45, 42, 233, -1, 2, -10};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{-10, -1, 2, 3, 13, 23, 23, 24, 34, 42, 45, 233, 435},
+        assertArrayEquals(new Integer[]{-10, -1, 2, 3, 13, 23, 23, 24, 34, 42, 45, 233, 435},
             array);
 
         array = new Integer[]{9, 2, 4, 1, 3, 2, 5, 7, 6, 9};
         sorter.sort(array, comparator);
-        Assert.assertArrayEquals(new Integer[]{1, 2, 2, 3, 4, 5, 6, 7, 9, 9}, array);
+        assertArrayEquals(new Integer[]{1, 2, 2, 3, 4, 5, 6, 7, 9, 9}, array);
     }
 
     private void tString() {
         String[] array = new String[]{"oiu", "ower", "xcv", "abcd", "abd", "dfs", "abc", "dfklsajkls"};
         sorter.sort(array, comparatorString);
-        Assert.assertArrayEquals(new String[]{"abc", "abcd", "abd", "dfklsajkls", "dfs", "oiu", "ower", "xcv"}, array);
+        assertArrayEquals(new String[]{"abc", "abcd", "abd", "dfklsajkls", "dfs", "oiu", "ower", "xcv"}, array);
     }
 }

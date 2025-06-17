@@ -16,6 +16,7 @@ public class Parcel11 {
 
     protected static class ParcelDestination implements Destination {
         private String label;
+
         private ParcelDestination(String whereTo) {
             label = whereTo;
         }
@@ -29,9 +30,11 @@ public class Parcel11 {
         }
 
         static int x = 10;
+
         static class AnotherLevel {
             public static void f() {
             }
+
             static int x = 10;
         }
     }

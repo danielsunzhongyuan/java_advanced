@@ -1,7 +1,6 @@
 package com.zsun.java.algorithms.sort;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by zsun.
@@ -12,14 +11,7 @@ import junit.framework.TestSuite;
 public class HeapSortTest extends SortTest {
     private Sort sorter = new HeapSort();
 
-    public HeapSortTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(HeapSortTest.class);
-    }
-
+    @Test
     public void test() {
         run(sorter);
     }

@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by qzou.
@@ -10,32 +10,28 @@ import junit.framework.TestSuite;
  *
  * @author qzou
  */
-public class PowerTest extends TestCase {
+public class PowerTest {
     private Power solution = new Power();
 
-    public PowerTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(PowerTest.class);
-    }
-
+    @Test
     public void testExponentZero() {
         assertEquals(1.0, solution.power(10.0, 0));
         assertEquals(1.0, solution.power(-10.0, 0));
     }
 
+    @Test
     public void testExponentOne() {
         for (int i = -3; i < 4; i++) {
             assertEquals(1.0 * i, solution.power(1.0 * i, 1));
         }
     }
 
+    @Test
     public void testMinusExponent() {
         assertEquals(0.5, solution.power(2, -1));
     }
 
+    @Test
     public void testBigExponent() {
         assertEquals(4.0, solution.power(2.0, 2));
         assertEquals(8.0, solution.power(2.0, 3));

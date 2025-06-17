@@ -1,8 +1,9 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by zsun.
@@ -10,24 +11,19 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class RevertListTest extends TestCase {
-    public RevertListTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(RevertListTest.class);
-    }
-
-    public void testEmpty() {
+public class RevertListTest {
+    @Test
+    void testEmpty() {
         assertNull(ListNode.reverseList(null));
     }
 
-    public void testOneNode() {
+    @Test
+    void testOneNode() {
         assertEquals(1, ListNode.reverseList(new ListNode(1)).value);
     }
 
-    public void testNormal() {
+    @Test
+    void testNormal() {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);

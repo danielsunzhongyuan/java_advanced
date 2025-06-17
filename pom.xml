@@ -17,7 +17,8 @@
         <module>effective-java</module>
         <module>jvm-insight</module>
         <module>quartz</module>
-        <module>multi-thread</module>
+        <module>concurrent-core-two</module>
+        <module>interesting-practices</module>
     </modules>
 
     <name>Java Advanced</name>
@@ -25,29 +26,30 @@
 
     <properties>
         <advanced.main.basedir>${project.basedir}</advanced.main.basedir>
-        <maven.checkstyle.version>3.0.0</maven.checkstyle.version>
+        <maven.checkstyle.version>3.6.0</maven.checkstyle.version>
         <hadoop.version>2.7.2</hadoop.version>
         <hbase.version>1.3.1</hbase.version>
         <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <parquet.version>1.7.0</parquet.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <parquet.version>1.15.2</parquet.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+        <junit.version>5.13.1</junit.version>
     </properties>
 
     <repositories>
-<!--        <repository>-->
-<!--            <id>xxx-releases</id>-->
-<!--            <url>http://nexus.xxx.com/nexus/content/groups/public</url>-->
-<!--            <releases>-->
-<!--                <enabled>true</enabled>-->
-<!--            </releases>-->
-<!--            <snapshots>-->
-<!--                <enabled>true</enabled>-->
-<!--            </snapshots>-->
-<!--        </repository>-->
+        <!--        <repository>-->
+        <!--            <id>xxx-releases</id>-->
+        <!--            <url>http://nexus.xxx.com/nexus/content/groups/public</url>-->
+        <!--            <releases>-->
+        <!--                <enabled>true</enabled>-->
+        <!--            </releases>-->
+        <!--            <snapshots>-->
+        <!--                <enabled>true</enabled>-->
+        <!--            </snapshots>-->
+        <!--        </repository>-->
         <repository>
             <id>HDPJetty</id>
             <name>HDP Jetty</name>
@@ -83,16 +85,16 @@
     </repositories>
 
     <distributionManagement>
-<!--        <repository>-->
-<!--            <id>xxx-releases</id>-->
-<!--            <name>Xxx Releases Repository</name>-->
-<!--            <url>http://nexus.xxx.com/nexus/content/repositories/releases/</url>-->
-<!--        </repository>-->
-<!--        <snapshotRepository>-->
-<!--            <id>xxx-snapshots</id>-->
-<!--            <name>Xxx Snapshots Repository</name>-->
-<!--            <url>http://nexus.xxx.com/nexus/content/repositories/snapshots/</url>-->
-<!--        </snapshotRepository>-->
+        <!--        <repository>-->
+        <!--            <id>xxx-releases</id>-->
+        <!--            <name>Xxx Releases Repository</name>-->
+        <!--            <url>http://nexus.xxx.com/nexus/content/repositories/releases/</url>-->
+        <!--        </repository>-->
+        <!--        <snapshotRepository>-->
+        <!--            <id>xxx-snapshots</id>-->
+        <!--            <name>Xxx Snapshots Repository</name>-->
+        <!--            <url>http://nexus.xxx.com/nexus/content/repositories/snapshots/</url>-->
+        <!--        </snapshotRepository>-->
     </distributionManagement>
 
     <!--
@@ -107,21 +109,12 @@
     -->
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.version}</version>
                 <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>xml-apis</groupId>
-                        <artifactId>xml-apis</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>xerces</groupId>
-                        <artifactId>xercesImpl</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
@@ -228,6 +221,11 @@
                 <version>1.0.0</version>
                 <classifier>hadoop2</classifier>
             </dependency>
+            <dependency>
+                <groupId>com.zsun.java.utils</groupId>
+                <artifactId>utils</artifactId>
+                <version>1.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -248,6 +246,21 @@
         </pluginManagement>
 
         <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.owasp</groupId>-->
+<!--                <artifactId>dependency-check-maven</artifactId>-->
+<!--                <version>12.1.3</version>-->
+<!--                <configuration>-->
+<!--                    <autoUpdate>true</autoUpdate>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>check</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -307,25 +320,25 @@
             </plugin>
 
             <!--这个是为了集成 codecov-->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.jacoco</groupId>-->
+<!--                <artifactId>jacoco-maven-plugin</artifactId>-->
+<!--                <version>0.8.3</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>prepare-agent</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>report</id>-->
+<!--                        <phase>test</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>report</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 </project>
