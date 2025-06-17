@@ -1,22 +1,16 @@
 package com.zsun.java.corejava9.enums;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author : zsun
  * @date : 2019/11/12 10:30
  */
-public class StandardTypeTest extends TestCase {
-    public StandardTypeTest(String name) {
-        super(name);
-    }
+public class StandardTypeTest {
 
-    public static Test suite() {
-        return new TestSuite(StandardTypeTest.class);
-    }
-
+    @Test
     public void testAll() {
         StandardType all = StandardType.ALL;
         System.out.println(all.getLabel());
@@ -25,15 +19,15 @@ public class StandardTypeTest extends TestCase {
         assertEquals(0, all.ordinal());
     }
 
-    @org.junit.Test
+    @Test
     public void getLabel() {
     }
 
-    @org.junit.Test
+    @Test
     public void getValue() {
     }
 
-    @org.junit.Test
+    @Test
     public void testToString() {
     }
 }

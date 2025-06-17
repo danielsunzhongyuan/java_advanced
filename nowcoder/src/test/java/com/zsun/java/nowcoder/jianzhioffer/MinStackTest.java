@@ -1,8 +1,9 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Created by zsun.
@@ -10,21 +11,15 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class MinStackTest extends TestCase {
+public class MinStackTest {
     private MinStack minStack = new MinStack();
 
-    public MinStackTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(MinStackTest.class);
-    }
-
+    @Test
     public void testNull() {
         assertEquals(-1, minStack.top());
     }
 
+    @Test
     public void testPushOne() {
         minStack.push(1);
         assertEquals(1, minStack.min());
@@ -40,12 +35,14 @@ public class MinStackTest extends TestCase {
         assertEquals(-1, minStack.top());
     }
 
+    @Test
     public void testPushTwo() {
         minStack.push(2);
         assertEquals(2, minStack.top());
         assertEquals(2, minStack.min());
     }
 
+    @Test
     public void testPop() {
         minStack.push(1);
         minStack.push(2);

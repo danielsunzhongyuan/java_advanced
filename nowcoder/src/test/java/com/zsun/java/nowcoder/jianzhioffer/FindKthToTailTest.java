@@ -1,54 +1,48 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 23:16
  */
-public class FindKthToTailTest extends TestCase {
-    private FindKthToTail findKthToTail;
+public class FindKthToTailTest {
+    private FindKthToTail findKthToTail = new FindKthToTail();
     private ListNode head;
 
-    public FindKthToTailTest(String name) {
-        super(name);
-    }
-
-    @Override
-    public void setUp() throws Exception {
-        findKthToTail = new FindKthToTail();
+    @BeforeEach
+    public void setHead() {
         head = ListNode.initListFromArray(new int[]{1, 2, 3, 4, 5});
     }
 
-    @Override
-    public void tearDown() throws Exception {
-        findKthToTail = null;
-    }
-
-    public static Test suite() {
-        return new TestSuite(FindKthToTailTest.class);
-    }
-
+    @Test
     public void testNthListNode() {
-        assertTrue("should be first node: 1", 1 == findKthToTail.kthFromTail(head, 5).getValue());
+        assertTrue(1 == findKthToTail.kthFromTail(head, 5).getValue());
     }
 
+    @Test
     public void testZerothListNode() {
-        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 0));
+        assertNull(findKthToTail.kthFromTail(head, 0));
     }
 
+    @Test
     public void testTooLargeKList() {
-        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 6));
+        assertNull(findKthToTail.kthFromTail(head, 6));
     }
 
+    @Test
     public void testNullList() {
         head = null;
-        assertTrue("should be null", null == findKthToTail.kthFromTail(head, 1));
+        assertNull(findKthToTail.kthFromTail(head, 1));
     }
 
+    @Test
     public void testLastListNode() {
-        assertTrue("should be last node: 5", 5 == findKthToTail.kthFromTail(head, 1).getValue());
+        assertEquals(5, findKthToTail.kthFromTail(head, 1).getValue());
     }
 }

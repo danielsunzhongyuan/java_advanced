@@ -1,35 +1,30 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by zsun.
  * DateTime: 2019/05/19 09:23
  */
-public class FindInTwoDimensionArrayTest extends TestCase {
+public class FindInTwoDimensionArrayTest {
     private FindInTwoDimensionArray solution = new FindInTwoDimensionArray();
 
-    public FindInTwoDimensionArrayTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(FindInTwoDimensionArrayTest.class);
-    }
-
+    @Test
     public void testNull() {
-        assertFalse("find nothing in an empty array", solution.find(-1, null));
-        assertFalse("find nothing in an empty array", solution.find(-1, new int[][]{}));
-        assertFalse("find nothing in an empty array", solution.find2(-1, null));
-        assertFalse("find nothing in an empty array", solution.find2(-1, new int[][]{}));
+        assertFalse(solution.find(-1, null));
+        assertFalse(solution.find(-1, new int[][]{}));
+        assertFalse(solution.find2(-1, null));
+        assertFalse(solution.find2(-1, new int[][]{}));
         int[] x = new int[]{};
         int[][] array = new int[][]{x};
-        assertFalse("find nothing in an empty array", solution.find(-1, array));
-        assertFalse("find nothing in an empty array", solution.find2(-1, array));
+        assertFalse(solution.find(-1, array));
+        assertFalse(solution.find2(-1, array));
     }
 
+    @Test
     public void testEvenArray() {
         int[][] array = new int[][]{
             {1, 2, 3, 4},
@@ -41,13 +36,14 @@ public class FindInTwoDimensionArrayTest extends TestCase {
             assertTrue(solution.find(i, array));
             assertTrue(solution.find2(i, array));
         }
-        assertFalse("should not find 100 in array", solution.find(100, array));
-        assertFalse("should not find 0 in array", solution.find(0, array));
+        assertFalse(solution.find(100, array));
+        assertFalse(solution.find(0, array));
 
-        assertFalse("should not find 100 in array", solution.find2(100, array));
-        assertFalse("should not find 0 in array", solution.find2(0, array));
+        assertFalse(solution.find2(100, array));
+        assertFalse(solution.find2(0, array));
     }
 
+    @Test
     public void testOddArray() {
         int[][] array = new int[][]{
             {1, 2, 3, 4, 5, 6, 7},
@@ -62,10 +58,10 @@ public class FindInTwoDimensionArrayTest extends TestCase {
             assertTrue(solution.find(i, array));
             assertTrue(solution.find2(i, array));
         }
-        assertFalse("should not find 100 in array", solution.find(100, array));
-        assertFalse("should not find 0 in array", solution.find(0, array));
+        assertFalse(solution.find(100, array));
+        assertFalse(solution.find(0, array));
 
-        assertFalse("should not find 100 in array", solution.find2(100, array));
-        assertFalse("should not find 0 in array", solution.find2(0, array));
+        assertFalse(solution.find2(100, array));
+        assertFalse(solution.find2(0, array));
     }
 }

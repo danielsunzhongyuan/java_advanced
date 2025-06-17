@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,28 +10,23 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class FindGreatestSumOfSubArrayTest extends TestCase {
+public class FindGreatestSumOfSubArrayTest {
     private FindGreatestSumOfSubArray solution = new FindGreatestSumOfSubArray();
 
-    public FindGreatestSumOfSubArrayTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(FindGreatestSumOfSubArrayTest.class);
-    }
-
+    @Test
     public void testEmpty() {
         assertEquals(0, solution.find(null));
         assertEquals(0, solution.find(new int[]{}));
     }
 
+    @Test
     public void testOneElement() {
         assertEquals(-1, solution.find(new int[]{-1}));
         assertEquals(0, solution.find(new int[]{0}));
         assertEquals(1, solution.find(new int[]{1}));
     }
 
+    @Test
     public void testNormal() {
         assertEquals(-10, solution.find(new int[]{-10, -11, -12, -13, -14}));
         assertEquals(18, solution.find(new int[]{1, -2, 3, 10, -4, 7, 2, -5}));

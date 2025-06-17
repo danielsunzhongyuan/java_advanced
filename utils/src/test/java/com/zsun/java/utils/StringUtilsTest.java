@@ -1,9 +1,8 @@
 package com.zsun.java.utils;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Created by sunzhongyuan.
@@ -11,19 +10,12 @@ import org.junit.Assert;
  *
  * @author sunzhongyuan
  */
-public class StringUtilsTest extends TestCase {
-    public StringUtilsTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(StringUtilsTest.class);
-    }
-
+public class StringUtilsTest {
+    @Test
     public void testSplitVersion() {
         String version = "1.2.3";
-        Assert.assertArrayEquals(new String[]{version}, StringUtils.splitVersion(version, 1));
+        assertArrayEquals(new String[]{version}, StringUtils.splitVersion(version, 1));
 
-        Assert.assertArrayEquals(new String[]{"1", "2.3"}, StringUtils.splitVersion(version, 2));
+        assertArrayEquals(new String[]{"1", "2.3"}, StringUtils.splitVersion(version, 2));
     }
 }

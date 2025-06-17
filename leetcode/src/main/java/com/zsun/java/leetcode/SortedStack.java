@@ -11,7 +11,7 @@ public class SortedStack<E extends Comparable> {
     Stack<E> helper;
 
     public SortedStack() {
-        data  = new Stack<>();
+        data = new Stack<>();
         helper = new Stack<>();
     }
 

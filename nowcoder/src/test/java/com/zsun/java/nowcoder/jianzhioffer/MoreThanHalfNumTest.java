@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,26 +10,21 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class MoreThanHalfNumTest extends TestCase {
+public class MoreThanHalfNumTest {
     private MoreThanHalfNum solution = new MoreThanHalfNum();
 
-    public MoreThanHalfNumTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(MoreThanHalfNumTest.class);
-    }
-
+    @Test
     public void testEmpty() {
         assertEquals(0, solution.findMoreThanHalfNum(null));
         assertEquals(0, solution.findMoreThanHalfNum(new int[]{}));
     }
 
+    @Test
     public void testOneElement() {
         assertEquals(1, solution.findMoreThanHalfNum(new int[]{1}));
     }
 
+    @Test
     public void testNormal() {
         assertEquals(0, solution.findMoreThanHalfNum(
             new int[]{5, 5, 5, 5, 1, 2, 3, 4}

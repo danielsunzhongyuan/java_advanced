@@ -1,9 +1,7 @@
 package com.zsun.java.tij.chapter21;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by zsun.
@@ -11,44 +9,41 @@ import org.junit.Assert;
  *
  * @author zsun
  */
-public class LiftOffTest extends TestCase {
-    public LiftOffTest(String name) {
-        super(name);
-    }
+public class LiftOffTest {
 
-    public static Test suite() {
-        return new TestSuite(LiftOffTest.class);
-    }
-
+    @Test
     public void test() {
         LiftOff launch = new LiftOff();
         launch.run();
         String[] results = launch.getResults();
-        Assert.assertArrayEquals(new String[]{
+        Assertions.assertArrayEquals(new String[]{
             "#0(LiftOff!).", "#0(1).", "#0(2).", "#0(3).", "#0(4).",
             "#0(5).", "#0(6).", "#0(7).", "#0(8).", "#0(9).",
         }, results);
     }
 
+    @Test
     public void testDefaultCountDown() {
         LiftOff launch = new LiftOff(0);
         launch.run();
         String[] results = launch.getResults();
-        Assert.assertArrayEquals(new String[]{
+        Assertions.assertArrayEquals(new String[]{
             "#0(LiftOff!).", "#0(1).", "#0(2).", "#0(3).", "#0(4).",
             "#0(5).", "#0(6).", "#0(7).", "#0(8).", "#0(9).",
         }, results);
     }
 
+    @Test
     public void testParameteredConstructer() {
         LiftOff launch = new LiftOff(3);
         launch.run();
         String[] results = launch.getResults();
-        Assert.assertArrayEquals(new String[]{
+        Assertions.assertArrayEquals(new String[]{
             "#0(LiftOff!).", "#0(1).", "#0(2).",
         }, results);
     }
 
+    @Test
     public void testBasicThreads() throws Exception {
         LiftOff launch = new LiftOff(1);
         Thread t = new Thread(launch);
@@ -56,7 +51,7 @@ public class LiftOffTest extends TestCase {
             t.start();
             t.join();
             String[] results = launch.getResults();
-            Assert.assertArrayEquals(new String[]{"#0(LiftOff!)."}, results);
+            Assertions.assertArrayEquals(new String[]{"#0(LiftOff!)."}, results);
         } catch (Exception e) {
             System.out.println(e);
             throw e;

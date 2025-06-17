@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by qzou.
@@ -10,23 +10,17 @@ import junit.framework.TestSuite;
  *
  * @author qzou
  */
-public class JumpFloor2Test extends TestCase {
+public class JumpFloor2Test {
     private JumpFloor2 solution = new JumpFloor2();
 
-    public JumpFloor2Test(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(JumpFloor2Test.class);
-    }
-
+    @Test
     public void testInvalid() {
         for (int i = -3; i <= 0; i++) {
             assertEquals(-1, solution.jump2(i));
         }
     }
 
+    @Test
     public void testNormal() {
         assertEquals(1, solution.jump2(1));
         assertEquals(2, solution.jump2(2));

@@ -1,8 +1,9 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by zsun.
@@ -10,20 +11,14 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class RandomListNodeTest extends TestCase {
-    public RandomListNodeTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(RandomListNodeTest.class);
-    }
-
+public class RandomListNodeTest {
+    @Test
     public void testNull() {
         RandomListNode p1 = null;
         assertNull(RandomListNode.clone(p1));
     }
 
+    @Test
     public void testNormal() {
         RandomListNode p1 = new RandomListNode(1);
         RandomListNode p2 = new RandomListNode(2);

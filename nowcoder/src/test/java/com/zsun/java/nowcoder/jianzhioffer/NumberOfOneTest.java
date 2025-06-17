@@ -1,8 +1,8 @@
 package com.zsun.java.nowcoder.jianzhioffer;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created by zsun.
@@ -10,29 +10,25 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class NumberOfOneTest extends TestCase {
+public class NumberOfOneTest {
     private NumberOfOne solution = new NumberOfOne();
 
-    public NumberOfOneTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(NumberOfOneTest.class);
-    }
-
+    @Test
     public void testZero() {
         assertEquals(0, solution.NumberOf1(0));
     }
 
+    @Test
     public void testOne() {
         assertEquals(0, solution.NumberOf1(0));
     }
 
+    @Test
     public void testMinusOne() {
         assertEquals(32, solution.NumberOf1(-1));
     }
 
+    @Test
     public void testFive() {
         assertEquals(2, solution.NumberOf1(5));
     }

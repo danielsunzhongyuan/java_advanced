@@ -1,8 +1,9 @@
 package com.zsun.java.ej.chapter6;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Created by zsun.
@@ -10,20 +11,14 @@ import junit.framework.TestSuite;
  *
  * @author zsun
  */
-public class RomanNumeralsTest extends TestCase {
-    public RomanNumeralsTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(RomanNumeralsTest.class);
-    }
-
+public class RomanNumeralsTest {
+    @Test
     public void testEmpty() {
-        assertFalse("空值不符合罗马数字", RomanNumerals.isRomanNumeral(null));
-        assertFalse("空值不符合罗马数字", RomanNumerals.isRomanNumeral(""));
+        assertFalse(RomanNumerals.isRomanNumeral(null));
+        assertFalse(RomanNumerals.isRomanNumeral(""));
     }
 
+    @Test
     public void testNormal() {
         assertTrue(RomanNumerals.isRomanNumeral("I"));
         assertTrue(RomanNumerals.isRomanNumeral("II"));
@@ -37,6 +32,7 @@ public class RomanNumeralsTest extends TestCase {
         assertTrue(RomanNumerals.isRomanNumeral("X"));
     }
 
+    @Test
     public void testFail() {
         assertFalse(RomanNumerals.isRomanNumeral("IIII"));
         assertFalse(RomanNumerals.isRomanNumeral("ABC"));

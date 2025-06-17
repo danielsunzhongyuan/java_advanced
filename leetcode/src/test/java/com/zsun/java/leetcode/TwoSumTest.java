@@ -1,9 +1,7 @@
 package com.zsun.java.leetcode;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by zsun.
@@ -11,26 +9,20 @@ import org.junit.Assert;
  *
  * @author zsun
  */
-public class TwoSumTest extends TestCase {
+public class TwoSumTest {
     private TwoSum solution = new TwoSum();
 
-    public TwoSumTest(String name) {
-        super(name);
+    @Test
+    void testEmpty() {
+        Assertions.assertArrayEquals(new int[]{0, 0}, solution.find(null, 100));
+        Assertions.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{}, 100));
+        Assertions.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{1}, 100));
+        Assertions.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{100}, 100));
     }
 
-    public static Test suite() {
-        return new TestSuite(TwoSumTest.class);
-    }
-
-    public void testEmpty() {
-        Assert.assertArrayEquals(new int[]{0, 0}, solution.find(null, 100));
-        Assert.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{}, 100));
-        Assert.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{1}, 100));
-        Assert.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{100}, 100));
-    }
-
-    public void testNormal() {
-        Assert.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{1, 2, 3}, 100));
-        Assert.assertArrayEquals(new int[]{0, 1}, solution.find(new int[]{5, 2, 9}, 7));
+    @Test
+    void testNormal() {
+        Assertions.assertArrayEquals(new int[]{0, 0}, solution.find(new int[]{1, 2, 3}, 100));
+        Assertions.assertArrayEquals(new int[]{0, 1}, solution.find(new int[]{5, 2, 9}, 7));
     }
 }

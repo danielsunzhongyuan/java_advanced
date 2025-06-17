@@ -1,19 +1,11 @@
 package com.zsun.java.algorithms.sort;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
 
 public class InsertionSortDichotomySortTest extends SortTest {
     private Sort sorter = new InsertionSortDichotomySort();
 
-    public InsertionSortDichotomySortTest(String name) {
-        super(name);
-    }
-
-    public static Test suite() {
-        return new TestSuite(InsertionSortDichotomySortTest.class);
-    }
-
+    @Test
     public void test() {
         run(sorter);
     }
